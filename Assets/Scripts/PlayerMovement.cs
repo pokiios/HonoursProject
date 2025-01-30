@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -15,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalInput;
     float verticalInput;
+
+    [SerializeField] AK.Wwise.Event footstepsEvent;
+
+    [SerializeField] private Animator _animator;
 
     Vector3 moveDirection;
     Rigidbody rb;
@@ -73,5 +78,12 @@ public class PlayerMovement : MonoBehaviour
             Vector3 limitedVel = flatVelocity.normalized * moveSpeed;
             rb.linearVelocity = new Vector3(limitedVel.x, rb.linearVelocity.y, limitedVel.z);
         }
+        _animator.SetFloat("Speed", flatVelocity.magnitude);
+    }
+
+    private void PlayFootstep()
+    {
+        Debug.Log("Footstep :D");
+        footstepsEvent.Post(gameObject);
     }
 }

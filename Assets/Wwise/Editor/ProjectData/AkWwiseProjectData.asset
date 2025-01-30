@@ -66,8 +66,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7093cb42cf0ce84ba2d92686dd68af21
     GuidInternal: 
-    m_lastTime: -8584648332770983995
-    List: []
+    m_lastTime: -8584634137364456549
+    List:
+    - name: Main
+      guid: 6f8a54421cecd44ab5e84eac68e71991
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7093cb42cf0ce84ba2d92686dd68af21
+      - ElementName: Main
+        ObjectType: 7
+        guid: 6f8a54421cecd44ab5e84eac68e71991
+      Path: SoundBanks\Default Work Unit\Main
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -80,8 +94,42 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: d9829b2e836c2e468268eb7045074268
     GuidInternal: 
-    m_lastTime: -8584648332771982453
-    List: []
+    m_lastTime: -8584634139171183902
+    List:
+    - name: Rainfall
+      guid: a13e3b6f90bffb4183bd2d68105dd564
+      id: 511469240
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9829b2e836c2e468268eb7045074268
+      - ElementName: Rainfall
+        ObjectType: 3
+        guid: a13e3b6f90bffb4183bd2d68105dd564
+      Path: Events\Default Work Unit\Rainfall
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: RandomFootstep
+      guid: ae744f7c28aadc47b6f2e1c44f52cbc8
+      id: 1721495266
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9829b2e836c2e468268eb7045074268
+      - ElementName: RandomFootstep
+        ObjectType: 3
+        guid: ae744f7c28aadc47b6f2e1c44f52cbc8
+      Path: Events\Default Work Unit\RandomFootstep
+      maxAttenuation: 0
+      maxDuration: 0.5195806
+      minDuration: 0.40986603
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -139,7 +187,7 @@ MonoBehaviour:
     m_lastTime: -8584648332772391356
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 0500000006000000070000000b0000000c000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

@@ -1,0 +1,13 @@
+Event	ID	Name			Wwise Object Path	Notes
+	511469240	Rainfall			\Default Work Unit\Rainfall	
+	1721495266	RandomFootstep			\Default Work Unit\RandomFootstep	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	106835636	footstep_grass-003	D:\SCHOOL\HonoursProject24\HonoursProject\HonoursProject_WwiseProject\.cache\09\{09F867CF-CD84-96A7-8AFB-96139078D8E4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\footstep_grass-003		45266
+	348298471	rainfall_ambience	D:\SCHOOL\HonoursProject24\HonoursProject\HonoursProject_WwiseProject\.cache\F0\{F086859F-36E3-8C5E-01E5-1CA65A24CEF2}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Audio\Ambience\rainfall_ambience		23935472
+	569131726	footstep_grass-004	D:\SCHOOL\HonoursProject24\HonoursProject\HonoursProject_WwiseProject\.cache\25\{25DBAE81-BAFF-5F16-093D-CCFE7C9D6890}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\footstep_grass-004		36772
+	666204262	footstep_grass-006	D:\SCHOOL\HonoursProject24\HonoursProject\HonoursProject_WwiseProject\.cache\AB\{AB0C4101-939C-2AA1-1B45-EF33B062BB47}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\footstep_grass-006		42052
+	778272912	footstep_grass-002	D:\SCHOOL\HonoursProject24\HonoursProject\HonoursProject_WwiseProject\.cache\75\{75181FF5-22E0-9391-6F86-0944E8137FC2}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\footstep_grass-002		37066
+	861281641	footstep_grass-001	D:\SCHOOL\HonoursProject24\HonoursProject\HonoursProject_WwiseProject\.cache\A1\{A1FD3A1B-FA82-DEF8-7AA9-BCC5C3E85FB7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\footstep_grass-001		39166
+	986253543	footstep_grass-005	D:\SCHOOL\HonoursProject24\HonoursProject\HonoursProject_WwiseProject\.cache\1C\{1CE2CD68-565E-1F8C-A39E-3906BD66A526}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\footstep_grass-005		36772
+

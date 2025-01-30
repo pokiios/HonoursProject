@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{2E9B82D9-6C83-462E-8268-EB7045074268}" SchemaVersion="123">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{2E9B82D9-6C83-462E-8268-EB7045074268}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2E9B82D9-6C83-462E-8268-EB7045074268}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="RandomFootstep" ID="{7C4F74AE-AA28-47DC-B6F2-E1C44F52CBC8}">
+					<ChildrenList>
+						<Action Name="" ID="{54AAAC40-B1F6-432A-8CE6-8E675518FBDE}" ShortID="712397098">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{A96A0397-D753-4DB2-B6C6-7901438CB6EC}" WorkUnitID="{D1757A11-25C3-455A-A05E-0B6B475EFD3F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Rainfall" ID="{6F3B3EA1-BF90-41FB-83BD-2D68105DD564}">
+					<ChildrenList>
+						<Action Name="" ID="{AD7DB398-F1F0-4E81-849D-3B0559D48560}" ShortID="225156980">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="rainfall_ambience" ID="{7A5A4866-3161-4D45-AD5D-EB59DCDC2DFD}" WorkUnitID="{D1757A11-25C3-455A-A05E-0B6B475EFD3F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
