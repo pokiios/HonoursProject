@@ -19,7 +19,29 @@
 						<Action Name="" ID="{AD7DB398-F1F0-4E81-849D-3B0559D48560}" ShortID="225156980">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="rainfall_ambience" ID="{7A5A4866-3161-4D45-AD5D-EB59DCDC2DFD}" WorkUnitID="{D1757A11-25C3-455A-A05E-0B6B475EFD3F}"/>
+									<ObjectRef Name="rainfall_ambience_1" ID="{B29EEAE0-B26C-47F4-8FA2-88DC3BCE6E39}" WorkUnitID="{D1757A11-25C3-455A-A05E-0B6B475EFD3F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HorrorAmbience" ID="{FB05BA11-C214-4188-A52F-8C44F4744961}">
+					<ChildrenList>
+						<Action Name="" ID="{AD666351-6718-4ABF-93CD-E2C792D95B5A}" ShortID="503688001">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="spookyambience-001" ID="{61655FBC-49DD-4F39-9628-8528DF110825}" WorkUnitID="{D1757A11-25C3-455A-A05E-0B6B475EFD3F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="RandomisedSoundEvent" ID="{6C6C8621-086C-4E15-87D5-69EFB5C7A6AF}">
+					<ChildrenList>
+						<Action Name="" ID="{3AA929D7-8E9B-419C-8120-2D82BE058DE8}" ShortID="984303131">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RandomisedSounds" ID="{C514D32E-4E5C-4147-9644-D90EC30BE6DE}" WorkUnitID="{D1757A11-25C3-455A-A05E-0B6B475EFD3F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

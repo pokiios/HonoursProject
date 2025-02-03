@@ -10,26 +10,42 @@
     "Type": "User",
     "GUID": "{42548A6F-EC1C-4AD4-B5E8-4EAC68E71991}",
     "Language": "SFX",
-    "Hash": "{7AD8B4BE-DAFA-F693-540A-F682B4ACB69C}",
+    "Hash": "{AA7EF8DC-EAEE-36D2-BF74-92A0022FB9A5}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
     "Media": [
+     {
+      "Id": "19862404",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "spookyambience-001.wav",
+      "CachePath": "6A/{6A6D2F29-DFC3-9643-69BF-72E22D60F5BF}.wem"
+     },
      {
       "Id": "106835636",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "footstep_grass-003.wav",
-      "CachePath": "09/{09F867CF-CD84-96A7-8AFB-96139078D8E4}.wem"
+      "CachePath": "6D/{6D75F87C-E684-DA22-5261-77C7B6459A8A}.wem"
      },
      {
-      "Id": "348298471",
+      "Id": "371272113",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Audio\\Ambience\\rainfall_ambience.wav",
-      "CachePath": "F0/{F086859F-36E3-8C5E-01E5-1CA65A24CEF2}.wem"
+      "ShortName": "rainfall_ambience_1.wav",
+      "CachePath": "16/{168A257A-4AD8-D62B-945A-5422A959FE22}.wem"
+     },
+     {
+      "Id": "394691634",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "running_leaves.wav",
+      "CachePath": "26/{26D99D87-2092-2E8B-8869-4757975A318F}.wem"
      },
      {
       "Id": "569131726",
@@ -37,7 +53,15 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "footstep_grass-004.wav",
-      "CachePath": "25/{25DBAE81-BAFF-5F16-093D-CCFE7C9D6890}.wem"
+      "CachePath": "83/{83E39552-16C7-AF60-39F3-24E24531825F}.wem"
+     },
+     {
+      "Id": "657683873",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "whispers.wav",
+      "CachePath": "7E/{7E15064D-91E0-D54E-07EC-71235F4E8F05}.wem"
      },
      {
       "Id": "666204262",
@@ -45,7 +69,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "footstep_grass-006.wav",
-      "CachePath": "AB/{AB0C4101-939C-2AA1-1B45-EF33B062BB47}.wem"
+      "CachePath": "0C/{0C2E3135-4B1E-F156-2641-BCFBF309A936}.wem"
      },
      {
       "Id": "778272912",
@@ -53,7 +77,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "footstep_grass-002.wav",
-      "CachePath": "75/{75181FF5-22E0-9391-6F86-0944E8137FC2}.wem"
+      "CachePath": "CB/{CBBDA2A9-AC25-18D1-74FA-E3E50C1E88F8}.wem"
      },
      {
       "Id": "861281641",
@@ -61,7 +85,15 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "footstep_grass-001.wav",
-      "CachePath": "A1/{A1FD3A1B-FA82-DEF8-7AA9-BCC5C3E85FB7}.wem"
+      "CachePath": "3D/{3DC4B513-ED8F-4256-0C2C-4B0A6C68AAE2}.wem"
+     },
+     {
+      "Id": "880085475",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "branch_snap_1.wav",
+      "CachePath": "E2/{E2024BB3-5A61-5A93-7155-F5CB8CFA0AF9}.wem"
      },
      {
       "Id": "986253543",
@@ -69,10 +101,23 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "footstep_grass-005.wav",
-      "CachePath": "1C/{1CE2CD68-565E-1F8C-A39E-3906BD66A526}.wem"
+      "CachePath": "B9/{B912485E-28A6-80B6-AA49-A7866B6AAFED}.wem"
      }
     ],
     "Events": [
+     {
+      "Id": "1938073225",
+      "Name": "HorrorAmbience",
+      "ObjectPath": "\\Events\\Default Work Unit\\HorrorAmbience",
+      "GUID": "{FB05BA11-C214-4188-A52F-8C44F4744961}",
+      "MaxAttenuation": "20",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "19862404"
+       }
+      ]
+     },
      {
       "Id": "511469240",
       "Name": "Rainfall",
@@ -81,7 +126,7 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "348298471"
+        "Id": "371272113"
        }
       ]
      },
@@ -113,10 +158,39 @@
         "Id": "986253543"
        }
       ]
+     },
+     {
+      "Id": "2255296536",
+      "Name": "RandomisedSoundEvent",
+      "ObjectPath": "\\Events\\Default Work Unit\\RandomisedSoundEvent",
+      "GUID": "{6C6C8621-086C-4E15-87D5-69EFB5C7A6AF}",
+      "MaxAttenuation": "25",
+      "DurationType": "OneShot",
+      "DurationMin": "0.72025245",
+      "DurationMax": "17.42209",
+      "MediaRefs": [
+       {
+        "Id": "394691634"
+       },
+       {
+        "Id": "657683873"
+       },
+       {
+        "Id": "880085475"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1514330293",
+      "Name": "RTPC_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_Volume",
+      "GUID": "{3FAB1FC2-BB17-49B2-82C1-05FED64E529F}"
      }
     ]
    }
   ],
-  "FileHash": "{6918BAB1-AE02-418A-9366-DFC67DB08F08}"
+  "FileHash": "{CFBD3DEE-A685-84E2-BF98-C62E1505D16A}"
  }
 }

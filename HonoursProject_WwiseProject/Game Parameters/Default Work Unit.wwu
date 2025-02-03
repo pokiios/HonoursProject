@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C84021D6-E024-4CF5-8CF6-5F6FF4B1FE66}" SchemaVersion="123">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{C84021D6-E024-4CF5-8CF6-5F6FF4B1FE66}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C84021D6-E024-4CF5-8CF6-5F6FF4B1FE66}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="RTPC_PlayerRSP" ID="{114CAE44-57F8-47C1-BA34-D7660EBD6B66}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_PlayerECG" ID="{5F80409F-22CA-46A5-BACD-CB653DB1B0F1}">
+					<PropertyList>
+						<Property Name="BindToBuiltInParam" Type="int16" Value="1"/>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_Volume" ID="{3FAB1FC2-BB17-49B2-82C1-05FED64E529F}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>

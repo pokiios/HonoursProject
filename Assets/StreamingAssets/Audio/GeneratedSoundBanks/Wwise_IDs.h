@@ -13,9 +13,18 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID HORRORAMBIENCE = 1938073225U;
         static const AkUniqueID RAINFALL = 511469240U;
         static const AkUniqueID RANDOMFOOTSTEP = 1721495266U;
+        static const AkUniqueID RANDOMISEDSOUNDEVENT = 2255296536U;
     } // namespace EVENTS
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID RTPC_PLAYERECG = 4032813715U;
+        static const AkUniqueID RTPC_PLAYERRSP = 3498048591U;
+        static const AkUniqueID RTPC_VOLUME = 1514330293U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
