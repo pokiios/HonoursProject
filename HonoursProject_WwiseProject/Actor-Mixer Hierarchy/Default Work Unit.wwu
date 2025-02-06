@@ -21,7 +21,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-10</Value>
+								<Value>-20</Value>
 							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
@@ -227,6 +227,11 @@
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="1"/>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
@@ -583,7 +588,6 @@
 								<ModifierInfo>
 									<Modifier Name="" ID="{B33FE31D-D52C-4C13-ACDE-65E963E73C52}">
 										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
 											<Property Name="Max" Type="Real64" Value="3"/>
 										</PropertyList>
 									</Modifier>
@@ -619,6 +623,25 @@
 						<Sound Name="branch_snap_1" ID="{596D2D14-6387-48D6-8E23-FBC3E16E1076}" ShortID="746188913">
 							<PropertyList>
 								<Property Name="OverrideConversion" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{8E430BDB-6B58-4642-9DCC-9486B9D723DF}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{78918895-819B-4247-8AE7-42CF33661EEF}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -676,7 +699,6 @@
 												<PropertyList>
 													<Property Name="Enabled" Type="bool" Value="True"/>
 													<Property Name="Max" Type="Real64" Value="10"/>
-													<Property Name="Min" Type="Real64" Value="-10"/>
 												</PropertyList>
 											</Modifier>
 										</ModifierInfo>
@@ -693,7 +715,6 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="running_leaves" ID="{BA1441BB-32EB-4748-AED7-2814E78E5200}">
-									<Comment> </Comment>
 									<PropertyList>
 										<Property Name="CrossfadeDuration" Type="Real64" Value="97.143"/>
 										<Property Name="FadeInDuration" Type="Real64" Value="0.3191688190807"/>
@@ -718,14 +739,27 @@
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
-											<Modifier Name="" ID="{97AF5E1B-A772-4746-9330-719C650C2D2B}"/>
+											<Modifier Name="" ID="{97AF5E1B-A772-4746-9330-719C650C2D2B}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="20"/>
+													<Property Name="Min" Type="Real64" Value="-20"/>
+												</PropertyList>
+											</Modifier>
 										</ModifierInfo>
 									</ModifierList>
 								</Property>
 								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-30</Value>
-									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{E7AE7B51-49FC-4C98-BBBB-23058C791FF8}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>

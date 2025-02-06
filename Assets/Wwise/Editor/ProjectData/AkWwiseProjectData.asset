@@ -162,7 +162,7 @@ MonoBehaviour:
         guid: 21866c6c6c08154e87d569efb5c7a6af
       Path: Events\Default Work Unit\RandomisedSoundEvent
       maxAttenuation: 25
-      maxDuration: 17.42209
+      maxDuration: 14.589667
       minDuration: 0.72025245
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
