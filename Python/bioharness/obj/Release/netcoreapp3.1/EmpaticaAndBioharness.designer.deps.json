@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "InTheHand.Net.Bluetooth/4.0.18": {
+        "runtime": {
+          "lib/netstandard2.0/InTheHand.Net.Bluetooth.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.18.509"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.1/InTheHand.Net.Bluetooth.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.18.509"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "InTheHand.Net.Bluetooth/4.0.18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sxcN0LtRU0sd/InGwa0L4au98iPV439Ft3tk83Hza3LwkDQXFWKpC9GWgCQgk6n2KGxKebQfbMe7Ki6V5MXBFA==",
+      "path": "inthehand.net.bluetooth/4.0.18",
+      "hashPath": "inthehand.net.bluetooth.4.0.18.nupkg.sha512"
+    }
+  }
+}

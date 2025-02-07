@@ -1,0 +1,126 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "InTheHand.Net.Bluetooth/4.0.18": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/InTheHand.Net.Bluetooth.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/InTheHand.Net.Bluetooth.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.1/InTheHand.Net.Bluetooth.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "InTheHand.Net.Bluetooth/4.0.18": {
+      "sha512": "sxcN0LtRU0sd/InGwa0L4au98iPV439Ft3tk83Hza3LwkDQXFWKpC9GWgCQgk6n2KGxKebQfbMe7Ki6V5MXBFA==",
+      "type": "package",
+      "path": "inthehand.net.bluetooth/4.0.18",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "32feet-package-icon.png",
+        "inthehand.net.bluetooth.4.0.18.nupkg.sha512",
+        "inthehand.net.bluetooth.nuspec",
+        "lib/monoandroid90/InTheHand.Net.Bluetooth.dll",
+        "lib/monoandroid90/InTheHand.Net.Bluetooth.xml",
+        "lib/net461/InTheHand.Net.Bluetooth.dll",
+        "lib/net461/InTheHand.Net.Bluetooth.xml",
+        "lib/netstandard2.0/InTheHand.Net.Bluetooth.dll",
+        "lib/netstandard2.0/InTheHand.Net.Bluetooth.xml",
+        "lib/uap10.0.18362/InTheHand.Net.Bluetooth.dll",
+        "lib/uap10.0.18362/InTheHand.Net.Bluetooth.pri",
+        "lib/uap10.0.18362/InTheHand.Net.Bluetooth.xml",
+        "lib/xamarinios10/InTheHand.Net.Bluetooth.dll",
+        "lib/xamarinios10/InTheHand.Net.Bluetooth.xml",
+        "runtimes/win/lib/netcoreapp3.1/InTheHand.Net.Bluetooth.dll",
+        "runtimes/win/lib/netcoreapp3.1/InTheHand.Net.Bluetooth.pdb",
+        "runtimes/win/lib/netcoreapp3.1/InTheHand.Net.Bluetooth.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "InTheHand.Net.Bluetooth >= 4.0.18"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\lgmck\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\_School\\HonoursProject24\\PythonProject\\bioharness\\EmpaticaAndBioharness.csproj",
+      "projectName": "EmpaticaAndBioharness",
+      "projectPath": "D:\\_School\\HonoursProject24\\PythonProject\\bioharness\\EmpaticaAndBioharness.csproj",
+      "packagesPath": "C:\\Users\\lgmck\\.nuget\\packages\\",
+      "outputPath": "D:\\_School\\HonoursProject24\\PythonProject\\bioharness\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\lgmck\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "InTheHand.Net.Bluetooth": {
+            "target": "Package",
+            "version": "[4.0.18, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

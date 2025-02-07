@@ -1,0 +1,259 @@
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MainForm.resources
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.GenerateResource.cache
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfoInputs.cache
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfo.cs
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CoreCompileInputs.cache
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.exe
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.deps.json
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.json
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.dev.json
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\bin\Debug\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.genruntimeconfig.cache
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.AssemblyReference.cache
+D:\SarraDocs\PhD\SensorsConfig\EmpaticaAndBioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.GeneratedMSBuildEditorConfig.editorconfig
+D:\SarraDocs\PhD\SensorsConfig\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.exe
+D:\SarraDocs\PhD\SensorsConfig\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.deps.json
+D:\SarraDocs\PhD\SensorsConfig\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.json
+D:\SarraDocs\PhD\SensorsConfig\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.dev.json
+D:\SarraDocs\PhD\SensorsConfig\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\SarraDocs\PhD\SensorsConfig\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\SarraDocs\PhD\SensorsConfig\Protocol\bin\Debug\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\SarraDocs\PhD\SensorsConfig\Protocol\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.AssemblyReference.cache
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.BaselineForm.resources
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MainForm.resources
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.GenerateResource.cache
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.GeneratedMSBuildEditorConfig.editorconfig
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfoInputs.cache
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfo.cs
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CoreCompileInputs.cache
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.genruntimeconfig.cache
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.PlaySessionForm.resources
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.Properties.Resources.resources
+D:\SarraDocs\PhD\SensorsConfig\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MsgEndSessionForm.resources
+C:\Users\1906027\Desktop\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.exe
+C:\Users\1906027\Desktop\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.deps.json
+C:\Users\1906027\Desktop\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.json
+C:\Users\1906027\Desktop\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.dev.json
+C:\Users\1906027\Desktop\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+C:\Users\1906027\Desktop\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+C:\Users\1906027\Desktop\experiment tools\Protocol\bin\Debug\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+C:\Users\1906027\Desktop\experiment tools\Protocol\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.AssemblyReference.cache
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.BaselineForm.resources
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MainForm.resources
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MsgEndSessionForm.resources
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.PlaySessionForm.resources
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.Properties.Resources.resources
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.GenerateResource.cache
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfoInputs.cache
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfo.cs
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CoreCompileInputs.cache
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CopyComplete
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+C:\Users\1906027\Desktop\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.genruntimeconfig.cache
+D:\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.exe
+D:\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.deps.json
+D:\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.json
+D:\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.dev.json
+D:\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\experiment tools\Protocol\bin\Debug\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\experiment tools\Protocol\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.AssemblyReference.cache
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.BaselineForm.resources
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MainForm.resources
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MsgEndSessionForm.resources
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.PlaySessionForm.resources
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.Properties.Resources.resources
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.GenerateResource.cache
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.GeneratedMSBuildEditorConfig.editorconfig
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfoInputs.cache
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfo.cs
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CoreCompileInputs.cache
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CopyComplete
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.genruntimeconfig.cache
+D:\Experiment\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.exe
+D:\Experiment\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.deps.json
+D:\Experiment\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.json
+D:\Experiment\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.dev.json
+D:\Experiment\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\Experiment\experiment tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\Experiment\experiment tools\Protocol\bin\Debug\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\Experiment\experiment tools\Protocol\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.AssemblyReference.cache
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.BaselineForm.resources
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MainForm.resources
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MsgEndSessionForm.resources
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.PlaySessionForm.resources
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.Properties.Resources.resources
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.GenerateResource.cache
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.GeneratedMSBuildEditorConfig.editorconfig
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfoInputs.cache
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfo.cs
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CoreCompileInputs.cache
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CopyComplete
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\Experiment\experiment tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.genruntimeconfig.cache
+D:\Experiment\tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.exe
+D:\Experiment\tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.deps.json
+D:\Experiment\tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.json
+D:\Experiment\tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.dev.json
+D:\Experiment\tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\Experiment\tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\Experiment\tools\Protocol\bin\Debug\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\Experiment\tools\Protocol\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.AssemblyReference.cache
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.BaselineForm.resources
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MainForm.resources
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MsgEndSessionForm.resources
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.PlaySessionForm.resources
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.Properties.Resources.resources
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.GenerateResource.cache
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.GeneratedMSBuildEditorConfig.editorconfig
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfoInputs.cache
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfo.cs
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CoreCompileInputs.cache
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CopyComplete
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\Experiment\tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.genruntimeconfig.cache
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.exe
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.deps.json
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.json
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.dev.json
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.AssemblyReference.cache
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.BaselineForm.resources
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MainForm.resources
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MsgEndSessionForm.resources
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.PlaySessionForm.resources
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.Properties.Resources.resources
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.GenerateResource.cache
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfoInputs.cache
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfo.cs
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CoreCompileInputs.cache
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CopyComplete
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+C:\Users\SG\Desktop\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.genruntimeconfig.cache
+D:\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.exe
+D:\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.deps.json
+D:\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.json
+D:\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.dev.json
+D:\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\1537\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.AssemblyReference.cache
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.BaselineForm.resources
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MainForm.resources
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MsgEndSessionForm.resources
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.PlaySessionForm.resources
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.Properties.Resources.resources
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.GenerateResource.cache
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.GeneratedMSBuildEditorConfig.editorconfig
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfoInputs.cache
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfo.cs
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CoreCompileInputs.cache
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CopyComplete
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\1537\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.genruntimeconfig.cache
+D:\SG_docs\PhD\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.exe
+D:\SG_docs\PhD\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.deps.json
+D:\SG_docs\PhD\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.json
+D:\SG_docs\PhD\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.dev.json
+D:\SG_docs\PhD\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\SG_docs\PhD\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\SG_docs\PhD\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\SG_docs\PhD\Experiment\Tools\Protocol\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.AssemblyReference.cache
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.BaselineForm.resources
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MainForm.resources
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MsgEndSessionForm.resources
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.PlaySessionForm.resources
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.Properties.Resources.resources
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.GenerateResource.cache
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.GeneratedMSBuildEditorConfig.editorconfig
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfoInputs.cache
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfo.cs
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CoreCompileInputs.cache
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CopyComplete
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\SG_docs\PhD\Experiment\Tools\Protocol\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.genruntimeconfig.cache
+C:\Users\SG\Desktop\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.AssemblyReference.cache
+C:\Users\SG\Desktop\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MainForm.resources
+C:\Users\SG\Desktop\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.GenerateResource.cache
+C:\Users\SG\Desktop\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SG\Desktop\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfoInputs.cache
+C:\Users\SG\Desktop\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfo.cs
+C:\Users\SG\Desktop\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CoreCompileInputs.cache
+C:\Users\SG\Desktop\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.exe
+C:\Users\SG\Desktop\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.deps.json
+C:\Users\SG\Desktop\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.json
+C:\Users\SG\Desktop\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.dev.json
+C:\Users\SG\Desktop\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+C:\Users\SG\Desktop\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+C:\Users\SG\Desktop\bioharness\bin\Debug\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+C:\Users\SG\Desktop\bioharness\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+C:\Users\SG\Desktop\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CopyComplete
+C:\Users\SG\Desktop\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+C:\Users\SG\Desktop\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+C:\Users\SG\Desktop\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.genruntimeconfig.cache
+D:\_School\Bioharness Material CMP 400\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.exe
+D:\_School\Bioharness Material CMP 400\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.deps.json
+D:\_School\Bioharness Material CMP 400\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.json
+D:\_School\Bioharness Material CMP 400\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.dev.json
+D:\_School\Bioharness Material CMP 400\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\_School\Bioharness Material CMP 400\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\_School\Bioharness Material CMP 400\bioharness\bin\Debug\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\_School\Bioharness Material CMP 400\bioharness\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\_School\Bioharness Material CMP 400\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.AssemblyReference.cache
+D:\_School\Bioharness Material CMP 400\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MainForm.resources
+D:\_School\Bioharness Material CMP 400\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.GenerateResource.cache
+D:\_School\Bioharness Material CMP 400\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.GeneratedMSBuildEditorConfig.editorconfig
+D:\_School\Bioharness Material CMP 400\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfoInputs.cache
+D:\_School\Bioharness Material CMP 400\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfo.cs
+D:\_School\Bioharness Material CMP 400\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CoreCompileInputs.cache
+D:\_School\Bioharness Material CMP 400\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CopyComplete
+D:\_School\Bioharness Material CMP 400\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\_School\Bioharness Material CMP 400\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\_School\Bioharness Material CMP 400\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.genruntimeconfig.cache
+D:\_School\HonoursProject24\PythonProject\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.exe
+D:\_School\HonoursProject24\PythonProject\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.deps.json
+D:\_School\HonoursProject24\PythonProject\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.json
+D:\_School\HonoursProject24\PythonProject\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.runtimeconfig.dev.json
+D:\_School\HonoursProject24\PythonProject\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\_School\HonoursProject24\PythonProject\bioharness\bin\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\_School\HonoursProject24\PythonProject\bioharness\bin\Debug\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\_School\HonoursProject24\PythonProject\bioharness\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\InTheHand.Net.Bluetooth.dll
+D:\_School\HonoursProject24\PythonProject\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.AssemblyReference.cache
+D:\_School\HonoursProject24\PythonProject\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.MainForm.resources
+D:\_School\HonoursProject24\PythonProject\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.GenerateResource.cache
+D:\_School\HonoursProject24\PythonProject\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.GeneratedMSBuildEditorConfig.editorconfig
+D:\_School\HonoursProject24\PythonProject\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfoInputs.cache
+D:\_School\HonoursProject24\PythonProject\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.AssemblyInfo.cs
+D:\_School\HonoursProject24\PythonProject\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CoreCompileInputs.cache
+D:\_School\HonoursProject24\PythonProject\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.sourcelink.json
+D:\_School\HonoursProject24\PythonProject\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.csproj.CopyComplete
+D:\_School\HonoursProject24\PythonProject\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.dll
+D:\_School\HonoursProject24\PythonProject\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.pdb
+D:\_School\HonoursProject24\PythonProject\bioharness\obj\Debug\netcoreapp3.1\EmpaticaAndBioharness.genruntimeconfig.cache
