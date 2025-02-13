@@ -47,6 +47,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="RealTimeSoundEvent" ID="{FF6B2ED5-5E72-47C9-BB60-681BD32471C0}">
+					<ChildrenList>
+						<Action Name="" ID="{D6287EA7-696E-43E2-A481-993C01D89139}" ShortID="826815723">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RealTimeSounds" ID="{F5071038-E415-4511-B87B-B2FB8B907C9B}" WorkUnitID="{D1757A11-25C3-455A-A05E-0B6B475EFD3F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

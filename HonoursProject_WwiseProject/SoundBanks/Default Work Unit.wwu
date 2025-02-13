@@ -7,6 +7,7 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="HorrorAmbience" ID="{FB05BA11-C214-4188-A52F-8C44F4744961}" WorkUnitID="{2E9B82D9-6C83-462E-8268-EB7045074268}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Rainfall" ID="{6F3B3EA1-BF90-41FB-83BD-2D68105DD564}" WorkUnitID="{2E9B82D9-6C83-462E-8268-EB7045074268}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="RealTimeSoundEvent" ID="{FF6B2ED5-5E72-47C9-BB60-681BD32471C0}" WorkUnitID="{2E9B82D9-6C83-462E-8268-EB7045074268}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="RandomFootstep" ID="{7C4F74AE-AA28-47DC-B6F2-E1C44F52CBC8}" WorkUnitID="{2E9B82D9-6C83-462E-8268-EB7045074268}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="RandomisedSoundEvent" ID="{6C6C8621-086C-4E15-87D5-69EFB5C7A6AF}" WorkUnitID="{2E9B82D9-6C83-462E-8268-EB7045074268}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>

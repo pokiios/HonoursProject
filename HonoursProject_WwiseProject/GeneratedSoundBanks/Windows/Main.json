@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{42548A6F-EC1C-4AD4-B5E8-4EAC68E71991}",
     "Language": "SFX",
-    "Hash": "{E766DE64-679D-0B6C-3520-F3765E592FBD}",
+    "Hash": "{02650770-FFA6-EF63-913B-B7619C1711FE}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -164,7 +164,28 @@
       "Name": "RandomisedSoundEvent",
       "ObjectPath": "\\Events\\Default Work Unit\\RandomisedSoundEvent",
       "GUID": "{6C6C8621-086C-4E15-87D5-69EFB5C7A6AF}",
-      "MaxAttenuation": "25",
+      "MaxAttenuation": "50",
+      "DurationType": "OneShot",
+      "DurationMin": "0.72025245",
+      "DurationMax": "14.589667",
+      "MediaRefs": [
+       {
+        "Id": "394691634"
+       },
+       {
+        "Id": "657683873"
+       },
+       {
+        "Id": "880085475"
+       }
+      ]
+     },
+     {
+      "Id": "2592411681",
+      "Name": "RealTimeSoundEvent",
+      "ObjectPath": "\\Events\\Default Work Unit\\RealTimeSoundEvent",
+      "GUID": "{FF6B2ED5-5E72-47C9-BB60-681BD32471C0}",
+      "MaxAttenuation": "50",
       "DurationType": "OneShot",
       "DurationMin": "0.72025245",
       "DurationMax": "14.589667",
@@ -183,6 +204,12 @@
     ],
     "GameParameters": [
      {
+      "Id": "525170758",
+      "Name": "RTPC_PlayerVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_PlayerVolume",
+      "GUID": "{2B59D1A0-B0C3-41CE-BD70-BF78E45765D1}"
+     },
+     {
       "Id": "1514330293",
       "Name": "RTPC_Volume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_Volume",
@@ -191,6 +218,6 @@
     ]
    }
   ],
-  "FileHash": "{907E0EB6-E98D-E0BE-2E20-46F28DB5B3E0}"
+  "FileHash": "{9128CEC9-E5F1-58D4-3F5C-754D4C8590A3}"
  }
 }

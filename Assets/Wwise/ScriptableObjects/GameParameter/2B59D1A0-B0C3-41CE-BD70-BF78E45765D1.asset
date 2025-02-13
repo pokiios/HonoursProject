@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2669ad7dddb3ae44da31d5d5a9c3ca6c, type: 3}
+  m_Name: 2B59D1A0-B0C3-41CE-BD70-BF78E45765D1
+  m_EditorClassIdentifier: 
+  objectName: RTPC_PlayerVolume
+  id: 525170758
+  guid: 2B59D1A0-B0C3-41CE-BD70-BF78E45765D1

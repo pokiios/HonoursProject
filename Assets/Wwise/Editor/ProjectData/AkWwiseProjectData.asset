@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7093cb42cf0ce84ba2d92686dd68af21
     GuidInternal: 
-    m_lastTime: -8584630611612701648
+    m_lastTime: -8584621714442222884
     List:
     - name: Main
       guid: 6f8a54421cecd44ab5e84eac68e71991
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: d9829b2e836c2e468268eb7045074268
     GuidInternal: 
-    m_lastTime: -8584630630129491662
+    m_lastTime: -8584621660422975358
     List:
     - name: HorrorAmbience
       guid: 11ba05fb14c28841a52f8c44f4744961
@@ -161,7 +161,24 @@ MonoBehaviour:
         ObjectType: 3
         guid: 21866c6c6c08154e87d569efb5c7a6af
       Path: Events\Default Work Unit\RandomisedSoundEvent
-      maxAttenuation: 25
+      maxAttenuation: 50
+      maxDuration: 14.589667
+      minDuration: 0.72025245
+    - name: RealTimeSoundEvent
+      guid: d52e6bff725ec947bb60681bd32471c0
+      id: 2592411681
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9829b2e836c2e468268eb7045074268
+      - ElementName: RealTimeSoundEvent
+        ObjectType: 3
+        guid: d52e6bff725ec947bb60681bd32471c0
+      Path: Events\Default Work Unit\RealTimeSoundEvent
+      maxAttenuation: 50
       maxDuration: 14.589667
       minDuration: 0.72025245
   RtpcWwu:
@@ -176,7 +193,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: d62140c824e0f54c8cf65f6ff4b1fe66
     GuidInternal: 
-    m_lastTime: -8584630580660616021
+    m_lastTime: -8584621660422865645
     List:
     - name: RTPC_PlayerECG
       guid: 9f40805fca22a546bacdcb653db1b0f1
@@ -206,6 +223,20 @@ MonoBehaviour:
         ObjectType: 13
         guid: 44ae4c11f857c147ba34d7660ebd6b66
       Path: Game Parameters\Default Work Unit\RTPC_PlayerRSP
+    - name: RTPC_PlayerVolume
+      guid: a0d1592bc3b0ce41bd70bf78e45765d1
+      id: 525170758
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d62140c824e0f54c8cf65f6ff4b1fe66
+      - ElementName: RTPC_PlayerVolume
+        ObjectType: 13
+        guid: a0d1592bc3b0ce41bd70bf78e45765d1
+      Path: Game Parameters\Default Work Unit\RTPC_PlayerVolume
     - name: RTPC_Volume
       guid: c21fab3f17bbb24982c105fed64e529f
       id: 1514330293
@@ -263,7 +294,7 @@ MonoBehaviour:
     m_lastTime: -8584648332772391356
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000070000000b0000000c000000160000001700000018000000
+  ExpandedWaapiItemIds: 0500000006000000070000000b0000000c00000016000000170000001800000019000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

@@ -5,7 +5,7 @@
 			<ChildrenList>
 				<Attenuation Name="ambience_attenuation_2" ID="{82BE7683-63A1-4806-B4F2-2ED41E4D4650}" ShortID="1033104926">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="25"/>
+						<Property Name="RadiusMax" Type="Real64" Value="50"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -21,13 +21,13 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>12.48237</XPos>
-											<YPos>-0</YPos>
+											<XPos>12.50252</XPos>
+											<YPos>0</YPos>
 											<Flags>0</Flags>
 											<SegmentShape>Exp1</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>25</XPos>
+											<XPos>50</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -55,7 +55,13 @@
 											<SegmentShape>Exp1</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>25</XPos>
+											<XPos>37.58587</XPos>
+											<YPos>100</YPos>
+											<Flags>0</Flags>
+											<SegmentShape>Log1</SegmentShape>
+										</Point>
+										<Point>
+											<XPos>50</XPos>
 											<YPos>100</YPos>
 											<Flags>37</Flags>
 										</Point>

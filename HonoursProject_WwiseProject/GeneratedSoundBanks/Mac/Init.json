@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{1D5F93F5-4272-20F0-D003-14521784B9EF}",
+    "Hash": "{09B4E09F-B70D-A60B-24DA-2BFB5EC6105A}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -44,6 +44,12 @@
     ],
     "GameParameters": [
      {
+      "Id": "525170758",
+      "Name": "RTPC_PlayerVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_PlayerVolume",
+      "GUID": "{2B59D1A0-B0C3-41CE-BD70-BF78E45765D1}"
+     },
+     {
       "Id": "1514330293",
       "Name": "RTPC_Volume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_Volume",
@@ -64,6 +70,6 @@
     ]
    }
   ],
-  "FileHash": "{1EF44C2C-E8E6-87EE-C902-4C492A4F4EB7}"
+  "FileHash": "{DFE7D0FC-20BB-FE1A-C143-D4E4E737A074}"
  }
 }

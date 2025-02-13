@@ -16,7 +16,6 @@ public class RandomisedManager : MonoBehaviour
 
     float timer;
     bool can_play;
-    bool has_played;
     GameObject soundPlayer;
 
     void Start()
@@ -44,9 +43,7 @@ public class RandomisedManager : MonoBehaviour
         if (timer <= 0)
         {
                 // If timer is complete, pick a random spot within attenuation zone to play sound, restart the timer and play a sound
-                timer = Random.Range(10,25);
-                randomRange1 = Random.Range(-attenuationRange, attenuationRange);
-                randomRange2 = Random.Range(-attenuationRange, attenuationRange);
+                timer = Random.Range(5,15);
                 playSound();
         }
     }
@@ -68,6 +65,8 @@ public class RandomisedManager : MonoBehaviour
     {
         if (can_play == true)
         {
+            randomRange1 = Random.Range(-attenuationRange, attenuationRange);
+            randomRange2 = Random.Range(-attenuationRange, attenuationRange);
             soundPlayer.transform.position = new Vector3(attenuationPosition.transform.position.x + randomRange1, attenuationPosition.transform.position.y, attenuationPosition.transform.position.z + randomRange2);
             randomisedSounds.Post(soundPlayer);
             Debug.Log("Playing Sound at " + transform.position);
