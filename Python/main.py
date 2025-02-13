@@ -1,6 +1,5 @@
 # Load NeuroKit and other useful packages
-from lib2to3.pgen2.pgen import DFAState
-from modulefinder import packagePathMap
+
 import os
 from signal import getsignal
 import neurokit2 as nk
@@ -17,7 +16,7 @@ def LoadFile(path, filename):
         return df
     except:
         print('Error ECG file load')
-        return none
+        return None
 
 def SegmentData(df, start_time, end_time=None):
     if len(df) > 2:
@@ -44,7 +43,7 @@ def SegmentData(df, start_time, end_time=None):
 
 # Getting Signal from ECG
 def GetECGSignal(df, sampling_rate):
-    if df == None:
+    if df is None:
         return None
     try:
         signal, _ = nk.ecg_process(df[0], sampling_rate = sampling_rate)
@@ -61,7 +60,7 @@ def GetPeaks(signal):
 
 # Getting The RMSSD from the Peaks (Smaller number means higher activity)
 def GetRMSSD(peaks, sampling_rate):
-    if peaks == None:
+    if peaks is None:
         return None
     try:
         hrv_out = nk.hrv_time(peaks, sampling_rate = sampling_rate)
@@ -72,7 +71,7 @@ def GetRMSSD(peaks, sampling_rate):
 
 # Geting the RSP Signal
 def GetRSPSignal(df, sampling_rate):
-    if df == None:
+    if df is None:
         return None
     try:
         signal, _ = nk.rsp_process(df[0], sampling_rate = sampling_rate)
@@ -82,7 +81,7 @@ def GetRSPSignal(df, sampling_rate):
         return None
     
 def GetRate(signal):
-    if signal == None:
+    if signal is None:
         return None
     return signal["RSP_Rate"]
 
@@ -117,6 +116,11 @@ if __name__ == "__main__":
             rsp_df = SegmentData(rsp_df, data_segment_start_time, data_segment_end_time)
             rsp_signal = GetRSPSignal(rsp_df, rsp_sampling_rate)
             rsp_rate = GetRate(rsp_signal)
+            
+            #export dataframes
+            ecg_df.df_to_csv("../output/ecg_df.csv")
+            rsp_df.df_to_csv("../output/rsp_df.csv")
+
             
 
         if exitKey == 27 or exitKey == 10: # if press escape or enter
