@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -15,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalInput;
     float verticalInput;
+
+    [SerializeField] AK.Wwise.Event footstepsEvent;
+
+    [SerializeField] private Animator _animator;
 
     Vector3 moveDirection;
     Rigidbody rb;
@@ -35,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
         GetInput();
+        SpeedControl();
 
         // Handle Drag
         if (grounded)
@@ -59,5 +65,25 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
         rb.AddForce(moveDirection.normalized * moveSpeed, ForceMode.Force);
+
+    }
+
+    private void SpeedControl()
+    {
+        Vector3 flatVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+
+        // limit velocity
+        if(flatVelocity.magnitude > moveSpeed)
+        {
+            Vector3 limitedVel = flatVelocity.normalized * moveSpeed;
+            rb.linearVelocity = new Vector3(limitedVel.x, rb.linearVelocity.y, limitedVel.z);
+        }
+        _animator.SetFloat("Speed", flatVelocity.magnitude);
+    }
+
+    private void PlayFootstep()
+    {
+        Debug.Log("Footstep :D");
+        footstepsEvent.Post(gameObject);
     }
 }

@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{2E9B82D9-6C83-462E-8268-EB7045074268}" SchemaVersion="123">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{2E9B82D9-6C83-462E-8268-EB7045074268}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2E9B82D9-6C83-462E-8268-EB7045074268}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="RandomFootstep" ID="{7C4F74AE-AA28-47DC-B6F2-E1C44F52CBC8}">
+					<ChildrenList>
+						<Action Name="" ID="{54AAAC40-B1F6-432A-8CE6-8E675518FBDE}" ShortID="712397098">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{A96A0397-D753-4DB2-B6C6-7901438CB6EC}" WorkUnitID="{D1757A11-25C3-455A-A05E-0B6B475EFD3F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Rainfall" ID="{6F3B3EA1-BF90-41FB-83BD-2D68105DD564}">
+					<ChildrenList>
+						<Action Name="" ID="{AD7DB398-F1F0-4E81-849D-3B0559D48560}" ShortID="225156980">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="rainfall_ambience_1" ID="{B29EEAE0-B26C-47F4-8FA2-88DC3BCE6E39}" WorkUnitID="{D1757A11-25C3-455A-A05E-0B6B475EFD3F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="HorrorAmbience" ID="{FB05BA11-C214-4188-A52F-8C44F4744961}">
+					<ChildrenList>
+						<Action Name="" ID="{AD666351-6718-4ABF-93CD-E2C792D95B5A}" ShortID="503688001">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="spookyambience-001" ID="{61655FBC-49DD-4F39-9628-8528DF110825}" WorkUnitID="{D1757A11-25C3-455A-A05E-0B6B475EFD3F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="RandomisedSoundEvent" ID="{6C6C8621-086C-4E15-87D5-69EFB5C7A6AF}">
+					<ChildrenList>
+						<Action Name="" ID="{3AA929D7-8E9B-419C-8120-2D82BE058DE8}" ShortID="984303131">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RandomisedSounds" ID="{C514D32E-4E5C-4147-9644-D90EC30BE6DE}" WorkUnitID="{D1757A11-25C3-455A-A05E-0B6B475EFD3F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="RealTimeSoundEvent" ID="{FF6B2ED5-5E72-47C9-BB60-681BD32471C0}">
+					<ChildrenList>
+						<Action Name="" ID="{D6287EA7-696E-43E2-A481-993C01D89139}" ShortID="826815723">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RealTimeSounds" ID="{F5071038-E415-4511-B87B-B2FB8B907C9B}" WorkUnitID="{D1757A11-25C3-455A-A05E-0B6B475EFD3F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

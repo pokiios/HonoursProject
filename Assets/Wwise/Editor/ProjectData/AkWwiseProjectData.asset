@@ -66,8 +66,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7093cb42cf0ce84ba2d92686dd68af21
     GuidInternal: 
-    m_lastTime: -8584648332770983995
-    List: []
+    m_lastTime: -8584621714442222884
+    List:
+    - name: Main
+      guid: 6f8a54421cecd44ab5e84eac68e71991
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7093cb42cf0ce84ba2d92686dd68af21
+      - ElementName: Main
+        ObjectType: 7
+        guid: 6f8a54421cecd44ab5e84eac68e71991
+      Path: SoundBanks\Default Work Unit\Main
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -80,8 +94,93 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: d9829b2e836c2e468268eb7045074268
     GuidInternal: 
-    m_lastTime: -8584648332771982453
-    List: []
+    m_lastTime: -8584621660422975358
+    List:
+    - name: HorrorAmbience
+      guid: 11ba05fb14c28841a52f8c44f4744961
+      id: 1938073225
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9829b2e836c2e468268eb7045074268
+      - ElementName: HorrorAmbience
+        ObjectType: 3
+        guid: 11ba05fb14c28841a52f8c44f4744961
+      Path: Events\Default Work Unit\HorrorAmbience
+      maxAttenuation: 20
+      maxDuration: 0
+      minDuration: 0
+    - name: Rainfall
+      guid: a13e3b6f90bffb4183bd2d68105dd564
+      id: 511469240
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9829b2e836c2e468268eb7045074268
+      - ElementName: Rainfall
+        ObjectType: 3
+        guid: a13e3b6f90bffb4183bd2d68105dd564
+      Path: Events\Default Work Unit\Rainfall
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: RandomFootstep
+      guid: ae744f7c28aadc47b6f2e1c44f52cbc8
+      id: 1721495266
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9829b2e836c2e468268eb7045074268
+      - ElementName: RandomFootstep
+        ObjectType: 3
+        guid: ae744f7c28aadc47b6f2e1c44f52cbc8
+      Path: Events\Default Work Unit\RandomFootstep
+      maxAttenuation: 0
+      maxDuration: 0.5195806
+      minDuration: 0.40986603
+    - name: RandomisedSoundEvent
+      guid: 21866c6c6c08154e87d569efb5c7a6af
+      id: 2255296536
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9829b2e836c2e468268eb7045074268
+      - ElementName: RandomisedSoundEvent
+        ObjectType: 3
+        guid: 21866c6c6c08154e87d569efb5c7a6af
+      Path: Events\Default Work Unit\RandomisedSoundEvent
+      maxAttenuation: 50
+      maxDuration: 14.589667
+      minDuration: 0.72025245
+    - name: RealTimeSoundEvent
+      guid: d52e6bff725ec947bb60681bd32471c0
+      id: 2592411681
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9829b2e836c2e468268eb7045074268
+      - ElementName: RealTimeSoundEvent
+        ObjectType: 3
+        guid: d52e6bff725ec947bb60681bd32471c0
+      Path: Events\Default Work Unit\RealTimeSoundEvent
+      maxAttenuation: 50
+      maxDuration: 14.589667
+      minDuration: 0.72025245
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -94,8 +193,64 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: d62140c824e0f54c8cf65f6ff4b1fe66
     GuidInternal: 
-    m_lastTime: -8584648332771862776
-    List: []
+    m_lastTime: -8584621660422865645
+    List:
+    - name: RTPC_PlayerECG
+      guid: 9f40805fca22a546bacdcb653db1b0f1
+      id: 4032813715
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d62140c824e0f54c8cf65f6ff4b1fe66
+      - ElementName: RTPC_PlayerECG
+        ObjectType: 13
+        guid: 9f40805fca22a546bacdcb653db1b0f1
+      Path: Game Parameters\Default Work Unit\RTPC_PlayerECG
+    - name: RTPC_PlayerRSP
+      guid: 44ae4c11f857c147ba34d7660ebd6b66
+      id: 3498048591
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d62140c824e0f54c8cf65f6ff4b1fe66
+      - ElementName: RTPC_PlayerRSP
+        ObjectType: 13
+        guid: 44ae4c11f857c147ba34d7660ebd6b66
+      Path: Game Parameters\Default Work Unit\RTPC_PlayerRSP
+    - name: RTPC_PlayerVolume
+      guid: a0d1592bc3b0ce41bd70bf78e45765d1
+      id: 525170758
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d62140c824e0f54c8cf65f6ff4b1fe66
+      - ElementName: RTPC_PlayerVolume
+        ObjectType: 13
+        guid: a0d1592bc3b0ce41bd70bf78e45765d1
+      Path: Game Parameters\Default Work Unit\RTPC_PlayerVolume
+    - name: RTPC_Volume
+      guid: c21fab3f17bbb24982c105fed64e529f
+      id: 1514330293
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d62140c824e0f54c8cf65f6ff4b1fe66
+      - ElementName: RTPC_Volume
+        ObjectType: 13
+        guid: c21fab3f17bbb24982c105fed64e529f
+      Path: Game Parameters\Default Work Unit\RTPC_Volume
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -139,7 +294,7 @@ MonoBehaviour:
     m_lastTime: -8584648332772391356
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 0500000006000000070000000b0000000c00000016000000170000001800000019000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
