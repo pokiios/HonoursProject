@@ -98,28 +98,51 @@ if __name__ == "__main__":
     exitKey = cv.WaitKey(7) % 0x100
     
     print("Press ESC or Enter to Exit program.")
-
+    
+    data = {
+    "Timestamp":[0], 
+    "ECG":   [0], 
+    "RSP":  [0]
+    }
+    
+    collected_data = pd.DataFrame(data)
+    collected_data_df = pd.concat([collected_data_df, collected_data])
+    
     while True:
 
+        # One second counter
         time.sleep(1)
         timer += 1
+        
+        # check if timer has reached time passed (every 5 seconds)
         if timer % reading_times == 0:
+            
+            # Get start and end readings 
             data_segment_start_time = timer - reading_times
             data_segment_end_time = timer
+            
+            # Load and parse ecg data
             ecg_df = LoadFile(path, ecg_filename)
             ecg_df = SegmentData(ecg_df, data_segment_start_time, data_segment_end_time)
             ecg_signal = GetECGSignal(ecg_df, ecg_sampling_rate)
             ecg_peaks = GetPeaks(ecg_signal)
             rmssd = GetRMSSD(ecg_peaks, ecg_sampling_rate)
 
+            # Load and parse rsp data
             rsp_df = LoadFile(path, rsp_filename)
             rsp_df = SegmentData(rsp_df, data_segment_start_time, data_segment_end_time)
             rsp_signal = GetRSPSignal(rsp_df, rsp_sampling_rate)
             rsp_rate = GetRate(rsp_signal)
             
+            ## Push result to new csv
+            collected_data_df
+            
             #export dataframes
-            ecg_df.df_to_csv("../output/ecg_df.csv")
-            rsp_df.df_to_csv("../output/rsp_df.csv")
+            ecg_csv.df_to_csv("output/ecg_df.csv")
+            ecg_csv.df_to_csv("../Assets/CSV/ecg_csv.csv")
+            
+            rsp_csv.df_to_csv("output/rsp_df.csv")
+            rsp_csv.df_to_csv("../Assets/CSV/rsp_csv.csv")
 
             
 
