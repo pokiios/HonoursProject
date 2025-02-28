@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     bool grounded;
 
     public Transform orientation;
+    [SerializeField] string SceneName;
 
     float horizontalInput;
     float verticalInput;
@@ -34,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate() 
     {
         MovePlayer();
+        if (Input.GetKey(KeyCode.Backspace))
+        {
+            SceneManager.LoadScene(SceneName);
+        }
     }
     private void Update()
     {

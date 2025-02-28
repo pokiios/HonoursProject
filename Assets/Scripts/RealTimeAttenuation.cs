@@ -8,23 +8,29 @@ using Random = UnityEngine.Random;
 
 public class RealTimeAttenuation : MonoBehaviour
 {
+    // WWise
     [SerializeField] AK.Wwise.RTPC volumeRTPC;
     [SerializeField] AK.Wwise.RTPC ecgRTPC;
     [SerializeField] AK.Wwise.RTPC rspRTPC;
     [SerializeField] AK.Wwise.RTPC playerVolumeRTPC;
     [SerializeField] float attenuationRange; 
 
+    // Physiological stuff
     float currRMSSD, currBreathingRate;
     float[] RMSSDList, RSPList;
 
     float randomRange1, randomRange2;
     
+    // Lerp variables
     float currentValue, targetValue = 100;
     float easeSpeed = 0.1f;
 
-    [SerializeField] string csvFile = "../CSV/CollectedData.csv"
+    // File Path
+    string csvFile = "../CSV/CollectedData.csv";
 
     GameObject soundPlayer, soundPlayer2, soundPlayer3;
+    
+    // Other
     float timer;
     bool can_play;
 
@@ -61,46 +67,53 @@ public class RealTimeAttenuation : MonoBehaviour
     // Gets data
     void DataManager()
     {
-        //Parses CSV?
+        // CSV Parsing and sorting
         int counter = 1;
         StreamReader strReader = new StreamReader(csvFile);
         bool endOfFile = false;
         while(!endOfFile)
         {
-            string dataString = strReader.ReadLine();
-            if (data_string == null)
+            var dataString = strReader.ReadLine();
+
+            if (dataString == null)
             {
                 endOfFile = true;
                 break;
             }
-            var data_values = dataString.split(',');
+            var data_values = dataString.Split(',');
 
             for (int i = 0; i < data_values.Length; i++)
             {
-                if (i < 3)
+                // Don't go through the first 6 entries
+                if (i < 6)
                 {
                     break;
                 }
 
-                if (counter > 3)
-                {
-                    counter = 1
-                }
                 
+                // Sort categories based on where the counter is
                 switch(counter)
                 {
                     case 1:
                         break;
-                    break;
                     case 2:
-                        RMSSDList[i] = data_values[i];
-                    break;
+                        RMSSDList[i] = float.Parse(data_values[i]);
+                        break;
                     case 3:
-                        RSPList[i] = data_values[i];
-                    break;
+                        RSPList[i] = float.Parse(data_values[i]);
+                        break;
+                    default:
+                        break;
                 }
 
+                // Add to counter which sorts categories
                 counter++;
+
+                // If counter gets above 3, reset it
+                if (counter > 3)
+                {
+                    counter = 1;
+                }
             }
         }
     }
@@ -119,8 +132,6 @@ public class RealTimeAttenuation : MonoBehaviour
         currRMSSD = math.clamp(currRMSSD, 0, 100);
         // If number higher, make louder, add more sounds?
         // Should it be randomised or based on max fear/category?
-
-        
 
         // A lot of magic numbers to be fixed, need to tailor to more accurate rmssd values
         // Changes distance to player based on rmssd

@@ -121,28 +121,36 @@ if __name__ == "__main__":
             data_segment_start_time = timer - reading_times
             data_segment_end_time = timer
             
+            data["Timestamp"].append(data_segment_end_time)
+            
             # Load and parse ecg data
             ecg_df = LoadFile(path, ecg_filename)
             ecg_df = SegmentData(ecg_df, data_segment_start_time, data_segment_end_time)
             ecg_signal = GetECGSignal(ecg_df, ecg_sampling_rate)
             ecg_peaks = GetPeaks(ecg_signal)
             rmssd = GetRMSSD(ecg_peaks, ecg_sampling_rate)
+            data['RMSSD'].append(rmssd)
 
             # Load and parse rsp data
             rsp_df = LoadFile(path, rsp_filename)
             rsp_df = SegmentData(rsp_df, data_segment_start_time, data_segment_end_time)
             rsp_signal = GetRSPSignal(rsp_df, rsp_sampling_rate)
             rsp_rate = GetRate(rsp_signal)
+            data['RSP'].append(rsp_rate)
             
-            ## Push result to new csv
-            collected_data_df
+            
+            ## Push result to new dataframe
+            collected_data = pd.DataFrame(data)
+            collected_data_df = pd.concat([collected_data_df, collected_data])
             
             #export dataframes
-            ecg_csv.df_to_csv("output/ecg_df.csv")
-            ecg_csv.df_to_csv("../Assets/CSV/ecg_csv.csv")
+            collected_data_df.df_to_csv("../Assets/CSV/collected_data.csv")
             
-            rsp_csv.df_to_csv("output/rsp_df.csv")
-            rsp_csv.df_to_csv("../Assets/CSV/rsp_csv.csv")
+            # ecg_csv.df_to_csv("output/ecg_df.csv")
+            # ecg_csv.df_to_csv("../Assets/CSV/ecg_csv.csv")
+            
+            # rsp_csv.df_to_csv("output/rsp_df.csv")
+            # rsp_csv.df_to_csv("../Assets/CSV/rsp_csv.csv")
 
             
 
