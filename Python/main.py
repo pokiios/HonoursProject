@@ -152,7 +152,5 @@ if __name__ == "__main__":
             # rsp_csv.df_to_csv("output/rsp_df.csv")
             # rsp_csv.df_to_csv("../Assets/CSV/rsp_csv.csv")
 
-            
-
         if exitKey == 27 or exitKey == 10: # if press escape or enter
             break
