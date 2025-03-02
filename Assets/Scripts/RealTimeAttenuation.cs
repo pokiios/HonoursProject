@@ -5,31 +5,35 @@ using System;
 using System.Threading;
 using Unity.Mathematics;
 using Random = UnityEngine.Random;
+using System.Collections.Generic;
 
 public class RealTimeAttenuation : MonoBehaviour
 {
+    // Game Manager
+    float targetValue;
+
     // WWise
     [SerializeField] AK.Wwise.RTPC volumeRTPC;
     [SerializeField] AK.Wwise.RTPC ecgRTPC;
     [SerializeField] AK.Wwise.RTPC rspRTPC;
     [SerializeField] AK.Wwise.RTPC playerVolumeRTPC;
-    [SerializeField] float attenuationRange; 
+    [SerializeField] AK.Wwise.Event realTimeEvent;
+    [SerializeField] float attenuationRange;
+    [SerializeField] Transform AttenuationPosition;
+    [SerializeField] float distanceOffset;
 
     // Physiological stuff
     float currRMSSD, currBreathingRate;
     float[] RMSSDList, RSPList;
 
     float randomRange1, randomRange2;
-    
-    // Lerp variables
-    float currentValue, targetValue = 100;
-    float easeSpeed = 0.1f;
+
+    List<GameObject> soundPlayer = new List<GameObject>();
+    public Transform soundManager;
 
     // File Path
     string csvFile = "../CSV/CollectedData.csv";
 
-    GameObject soundPlayer, soundPlayer2, soundPlayer3;
-    
     // Other
     float timer;
     bool can_play;
@@ -37,131 +41,145 @@ public class RealTimeAttenuation : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Connect to one of the signals
-        randomRange1 = Random.Range(-attenuationRange, attenuationRange);
-        randomRange2 = Random.Range(-attenuationRange, attenuationRange);
-        volumeRTPC.SetGlobalValue(currentValue);
-    }
+        // Find Game Manager
+        targetValue = GameObject.Find("GameManager").GetComponent<GameTimer>().targetValue;
 
-    // Update is called once per frame
-    void Update()
-    {
-        currentValue = Mathf.Lerp(currentValue, targetValue, easeSpeed * Time.deltaTime);
-        volumeRTPC.SetGlobalValue(currentValue);
+        // Create random location to spawn sound, uses ecg
+        randomRange1 = Random.Range((-rspRTPC.GetGlobalValue() * distanceOffset), (rspRTPC.GetGlobalValue() * distanceOffset));
+        randomRange2 = Random.Range((-rspRTPC.GetGlobalValue() * distanceOffset), (rspRTPC.GetGlobalValue() * distanceOffset));
 
-        timer -= Time.deltaTime;
-
-        if (can_play)
+        foreach (GameObject child in soundManager.transform)
         {
-            if (timer == 0)
+            if (child.tag == "Sound")
             {
-                DataManager();
+                soundPlayer.Add(child.gameObject);
             }
-
-            RspManager();
-            EcgManager();
         }
-        
-    }
 
-    // Gets data
-    void DataManager()
-    {
-        // CSV Parsing and sorting
-        int counter = 1;
-        StreamReader strReader = new StreamReader(csvFile);
-        bool endOfFile = false;
-        while(!endOfFile)
+        // Update is called once per frame
+        void Update()
         {
-            var dataString = strReader.ReadLine();
+            timer -= Time.deltaTime;
 
-            if (dataString == null)
+            if (can_play)
             {
-                endOfFile = true;
-                break;
-            }
-            var data_values = dataString.Split(',');
-
-            for (int i = 0; i < data_values.Length; i++)
-            {
-                // Don't go through the first 6 entries
-                if (i < 6)
+                if (timer == 0)
                 {
+                    int randomPlayer = Random.Range(0, soundPlayer.Count);
+                    DataManager();
+                    PlaySound(randomPlayer);
+                    timer = Random.Range(ecgRTPC.GetGlobalValue(), ecgRTPC.GetGlobalValue() * 2);
+                }
+            }
+
+        }
+
+        // Gets data
+        void DataManager()
+        {
+            // CSV Parsing and sorting
+            int counter = 1;
+            StreamReader strReader = new StreamReader(csvFile);
+            bool endOfFile = false;
+            while (!endOfFile)
+            {
+                var dataString = strReader.ReadLine();
+
+                if (dataString == null)
+                {
+                    endOfFile = true;
                     break;
                 }
+                var data_values = dataString.Split(',');
 
-                
-                // Sort categories based on where the counter is
-                switch(counter)
+                for (int i = 0; i < data_values.Length; i++)
                 {
-                    case 1:
+                    // Don't go through the first 6 entries
+                    if (i < 6)
+                    {
                         break;
-                    case 2:
-                        RMSSDList[i] = float.Parse(data_values[i]);
-                        break;
-                    case 3:
-                        RSPList[i] = float.Parse(data_values[i]);
-                        break;
-                    default:
-                        break;
-                }
+                    }
 
-                // Add to counter which sorts categories
-                counter++;
 
-                // If counter gets above 3, reset it
-                if (counter > 3)
-                {
-                    counter = 1;
+                    // Sort categories based on where the counter is
+                    switch (counter)
+                    {
+                        case 1:
+                            break;
+                        case 2:
+                            RMSSDList[i] = float.Parse(data_values[i]);
+                            break;
+                        case 3:
+                            RSPList[i] = float.Parse(data_values[i]);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    // Add to counter which sorts categories
+                    counter++;
+
+                    // If counter gets above 3, reset it
+                    if (counter > 3)
+                    {
+                        counter = 1;
+                    }
                 }
             }
         }
-    }
 
-    // Manages effects that are handled by rsp_df
-    void RspManager()
-    {
-        // Change volume based on rsp
-        currBreathingRate = math.clamp(currBreathingRate, 0, 100);
-        playerVolumeRTPC.SetGlobalValue(currBreathingRate);
-    }
-
-    // Manages effects that are handled by ecg_df
-    void EcgManager()
-    {
-        currRMSSD = math.clamp(currRMSSD, 0, 100);
-        // If number higher, make louder, add more sounds?
-        // Should it be randomised or based on max fear/category?
-
-        // A lot of magic numbers to be fixed, need to tailor to more accurate rmssd values
-        // Changes distance to player based on rmssd
-        if (currRMSSD >= 100)
+        // Manages effects that are handled by rsp_df
+        void RspManager()
         {
-            attenuationRange = 50;
+            // Change volume based on rsp
+            currBreathingRate = math.clamp(currBreathingRate, 0, 100);
+            playerVolumeRTPC.SetGlobalValue(currBreathingRate);
         }
-        else if (currRMSSD >= 60)
-        {
-            attenuationRange = 30;
-        }
-        else if (currRMSSD >= 40)
-        {
-            attenuationRange = 20;
-        }
-        else if (currRMSSD < 40)
-        {
-            attenuationRange = 10;
-        }
-    }
 
-    void OnTriggerEnter(Collider other)
-    {
-        targetValue = 50f;
-        can_play = true;
-    }
+        // Manages effects that are handled by ecg_df
+        void EcgManager()
+        {
+            currRMSSD = math.clamp(currRMSSD, 0, 100);
+            // If number higher, make louder, add more sounds?
+            // Should it be randomised or based on max fear/category?
 
-    void OnTriggerExit(Collider other)
-    {
-        targetValue = 100f;
-        can_play = false;
+            // A lot of magic numbers to be fixed, need to tailor to more accurate rmssd values
+            // Changes distance to player based on rmssd
+            if (currRMSSD >= 100)
+            {
+                attenuationRange = 50;
+            }
+            else if (currRMSSD >= 60)
+            {
+                attenuationRange = 30;
+            }
+            else if (currRMSSD >= 40)
+            {
+                attenuationRange = 20;
+            }
+            else if (currRMSSD < 40)
+            {
+                attenuationRange = 10;
+            }
+        }
+
+        void PlaySound(int randomPlayer)
+        {
+            RspManager();
+            EcgManager();
+            realTimeEvent.Post(soundPlayer[randomPlayer]);
+        }
+
+        void OnTriggerEnter(Collider other)
+        {
+            targetValue = 50f;
+            can_play = true;
+        }
+
+        void OnTriggerExit(Collider other)
+        {
+            targetValue = 100f;
+            can_play = false;
+        }
     }
 }

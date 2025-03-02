@@ -1,27 +1,41 @@
+using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UIElements;
+using JetBrains.Annotations;
 
 public class RandomisedManager : MonoBehaviour
 {
+    // Game Manager
+    float targetValue;
+
+    // Wwise
     [SerializeField] AK.Wwise.Event randomisedSounds;
     [SerializeField] Transform attenuationPosition;
     [SerializeField] float attenuationRange;
     [SerializeField] AK.Wwise.RTPC volumeRTPC;
 
     float randomRange1, randomRange2;
-    float targetValue = 100f;
-    float easeSpeed = 0.3f;
-    float currentValue = 100f;
 
     float timer;
     bool can_play;
-    GameObject soundPlayer;
+    List<GameObject> soundPlayer = new List<GameObject>();
+    public Transform soundManager;
 
     void Start()
     {
-        volumeRTPC.SetGlobalValue(currentValue);
-        soundPlayer = GameObject.Find("RandomNoise");
+        // Find Game Manager
+        targetValue = GameObject.Find("GameManager").GetComponent<GameTimer>().targetValue;
+
+        foreach (GameObject child in soundManager.transform)
+        {
+            if (child.tag == "Sound")
+            {
+                soundPlayer.Add(child.gameObject);
+            }
+        }
         timer = Random.Range(5,15);
         randomRange1 = Random.Range(-attenuationRange, attenuationRange);
         randomRange2 = Random.Range(-attenuationRange, attenuationRange);
@@ -29,10 +43,6 @@ public class RandomisedManager : MonoBehaviour
 
     void Update()
     {
-        // Smooth value for volume RTPC
-        currentValue = Mathf.Lerp(currentValue, targetValue, easeSpeed * Time.deltaTime);
-        volumeRTPC.SetGlobalValue(currentValue);
-
         // Checks if in trigger area to deal with timer
         if (can_play)
         {
@@ -42,9 +52,10 @@ public class RandomisedManager : MonoBehaviour
 
         if (timer <= 0)
         {
-                // If timer is complete, pick a random spot within attenuation zone to play sound, restart the timer and play a sound
-                timer = Random.Range(5,15);
-                playSound();
+            // If timer is complete, pick a random spot within attenuation zone to play sound, restart the timer and play a sound
+            timer = Random.Range(5,15);
+            int randomPlayer = Random.Range(0, soundPlayer.Count);
+            playSound(randomPlayer);
         }
     }
     void OnTriggerEnter(Collider other)
@@ -60,16 +71,16 @@ public class RandomisedManager : MonoBehaviour
     }
 
 
-    // plays sound from the position of the range found earlier
-    void playSound()
+    // Uses random number to pick specific soundPlayer, means sounds are played at different places and can be layered.
+    void playSound(int randomPlayer)
     {
         if (can_play == true)
         {
             randomRange1 = Random.Range(-attenuationRange, attenuationRange);
             randomRange2 = Random.Range(-attenuationRange, attenuationRange);
-            soundPlayer.transform.position = new Vector3(attenuationPosition.transform.position.x + randomRange1, attenuationPosition.transform.position.y, attenuationPosition.transform.position.z + randomRange2);
-            randomisedSounds.Post(soundPlayer);
-            Debug.Log("Playing Sound at " + transform.position);
+            soundPlayer[randomPlayer].transform.position = new Vector3(attenuationPosition.transform.position.x + randomRange1, attenuationPosition.transform.position.y, attenuationPosition.transform.position.z + randomRange2);
+            randomisedSounds.Post(soundPlayer[randomPlayer]);
+            Debug.Log("Playing Sound at " + soundPlayer[randomPlayer].transform.position);
         }
     }
 }

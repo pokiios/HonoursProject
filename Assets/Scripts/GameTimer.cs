@@ -5,16 +5,26 @@ using TMPro;
 
 public class GameTimer : MonoBehaviour
 {
+    public class TimeStarted
+    {
+        public bool timeStarted = false;
+    }
 
+    // UI
     [SerializeField] TMP_Text timerText;
     [SerializeField] float totalTime;
     [SerializeField] string SceneName;
     public bool timeStarted = false;
 
+    //Wwise
+    [SerializeField] AK.Wwise.RTPC volumeRTPC;
+    public float currentValue, targetValue = 100;
+    [SerializeField] float easeSpeed = 0.3f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timeStarted = true;
+        volumeRTPC.SetGlobalValue(currentValue);
     }
 
     // Update is called once per frame
@@ -33,6 +43,9 @@ public class GameTimer : MonoBehaviour
             timeStarted = false;
             SceneManager.LoadScene(SceneName);
         }
+
+        currentValue = Mathf.Lerp(currentValue, targetValue, easeSpeed * Time.deltaTime);
+        volumeRTPC.SetGlobalValue(currentValue);
     }
 
     private void OnGUI()
