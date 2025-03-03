@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\_School\\HonoursProject24\\PythonProject\\bioharness\\EmpaticaAndBioharness.csproj": {}
+    "D:\\_School\\HonoursProject\\Python\\bioharness\\EmpaticaAndBioharness.csproj": {}
   },
   "projects": {
-    "D:\\_School\\HonoursProject24\\PythonProject\\bioharness\\EmpaticaAndBioharness.csproj": {
+    "D:\\_School\\HonoursProject\\Python\\bioharness\\EmpaticaAndBioharness.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\_School\\HonoursProject24\\PythonProject\\bioharness\\EmpaticaAndBioharness.csproj",
+        "projectUniqueName": "D:\\_School\\HonoursProject\\Python\\bioharness\\EmpaticaAndBioharness.csproj",
         "projectName": "EmpaticaAndBioharness",
-        "projectPath": "D:\\_School\\HonoursProject24\\PythonProject\\bioharness\\EmpaticaAndBioharness.csproj",
+        "projectPath": "D:\\_School\\HonoursProject\\Python\\bioharness\\EmpaticaAndBioharness.csproj",
         "packagesPath": "C:\\Users\\lgmck\\.nuget\\packages\\",
-        "outputPath": "D:\\_School\\HonoursProject24\\PythonProject\\bioharness\\obj\\",
+        "outputPath": "D:\\_School\\HonoursProject\\Python\\bioharness\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\lgmck\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,7 +38,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "netcoreapp3.1": {
@@ -64,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

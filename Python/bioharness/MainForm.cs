@@ -32,9 +32,9 @@ namespace EmpaticaAndBioharness
         private Guid mUUID = new Guid("00001101-0000-1000-8000-00805F9B34FB");
 
         // private readonly ulong targetDeviceAddress = 0xC83E990DCB8C; // First Device
-        // private readonly ulong targetDeviceAddress = 0xC83E990DBB19; // Second Device
+        private readonly ulong targetDeviceAddress = 0xC83E990DBB19; // Second Device
         // private readonly ulong targetDeviceAddress = 0xC83E990DC4EA; // Third Device
-        private readonly ulong targetDeviceAddress = 0xC83E990DC12E; // Fourth Device
+        // private readonly ulong targetDeviceAddress = 0xC83E990DC12E; // Fourth Device
 
         private readonly string myPin = "1234";
         private const int MAX_RESPONSE_LENGTH = 100;
@@ -657,7 +657,7 @@ namespace EmpaticaAndBioharness
                     string path = BHClass.GetLogPath();
 
                     //write the beginning of the session
-                    BHstreamLogger.responseToWriteQueue.Enqueue("SESSION_EVENT;" + "Start_session," + CurrentTimeInSeconds() + ";" + path);
+                    //BHstreamLogger.responseToWriteQueue.Enqueue("SESSION_EVENT;" + "Start_session," + CurrentTimeInSeconds() + ";" + path);
                 }
             }
 
@@ -702,7 +702,7 @@ namespace EmpaticaAndBioharness
                     string path = BHClass.GetLogPath();
 
                     //write the beginning of the session
-                    BHstreamLogger.responseToWriteQueue.Enqueue("SESSION_EVENT;" + "End_session," + CurrentTimeInSeconds() + ";" + path);
+                    //BHstreamLogger.responseToWriteQueue.Enqueue("SESSION_EVENT;" + "End_session," + CurrentTimeInSeconds() + ";" + path);
                 }
             }
 
