@@ -442,6 +442,184 @@
 										<ActiveSource Name="rainfall_ambience_1" ID="{08F7E86B-80E1-4C82-82E8-E4C488928371}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="Ambience_Forest" ID="{723A5202-5F3A-43B8-9206-25FA72DA4F10}" ShortID="1044045230">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Ambience" ID="{ED105933-91B3-40F3-A9C5-9898E0F0556D}" WorkUnitID="{E6D7B101-A726-4F01-A45E-091B777418A5}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B62E7A4-05DA-40FE-8B55-7B6A98AC5198}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Ambience_Forest" ID="{12F8F93E-C3E0-4B0B-A4F6-ACC9A5A84D1D}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="45.861630896366"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="56.6526028719816"/>
+												<Property Name="LoopBegin" Type="Real64" Value="20.6826962865964"/>
+												<Property Name="LoopEnd" Type="Real64" Value="420.847909426747"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Ambience_Forest.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="553768109"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{D0E83A52-8700-4051-9F6C-07339D657710}" ShortID="454349562">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Volume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="RTPC_AmbienceVolume" ID="{2A6CA830-9437-443D-BC30-370875DA05F5}" WorkUnitID="{C84021D6-E024-4CF5-8CF6-5F6FF4B1FE66}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{308BEEF3-E744-4246-A5AD-E064312DBF0D}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																				<SegmentShape>Log2</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+									<ActiveSourceList>
+										<ActiveSource Name="Ambience_Forest" ID="{12F8F93E-C3E0-4B0B-A4F6-ACC9A5A84D1D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="612642__newlocknew__heart-beat-2calm-rhythmblood-flows-in-the-veins6lrs" ID="{D67F3482-E7FF-4137-86F6-7127C79995D5}" ShortID="665341597">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Ambience" ID="{ED105933-91B3-40F3-A9C5-9898E0F0556D}" WorkUnitID="{E6D7B101-A726-4F01-A45E-091B777418A5}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B62E7A4-05DA-40FE-8B55-7B6A98AC5198}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="612642__newlocknew__heart-beat-2calm-rhythmblood-flows-in-the-veins6lrs" ID="{45A748EE-1132-4FC1-830E-00751F15552C}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.546111392011546"/>
+												<Property Name="LoopEnd" Type="Real64" Value="14.4880143873427"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>612642__newlocknew__heart-beat-2calm-rhythmblood-flows-in-the-veins6lrs.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="69067520"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{6BCF3584-45AC-4A28-A316-CF42ED629ACB}" ShortID="160756091">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Pitch"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="RTPC_PlayerECG" ID="{5F80409F-22CA-46A5-BACD-CB653DB1B0F1}" WorkUnitID="{C84021D6-E024-4CF5-8CF6-5F6FF4B1FE66}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{E84B8E48-D197-42E5-A5F4-4F4525A4906B}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="65537"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-415</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>1019</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{7045C05E-DA42-4527-8AB3-EA7DC6A20D43}" ShortID="424368088">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Volume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="RTPC_PlayerECG" ID="{5F80409F-22CA-46A5-BACD-CB653DB1B0F1}" WorkUnitID="{C84021D6-E024-4CF5-8CF6-5F6FF4B1FE66}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{6C8DB3E3-9BA0-4AED-830E-BC80D01CBD0C}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>58.8785046728972</XPos>
+																				<YPos>-4.60086456463256</YPos>
+																				<Flags>0</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+									<ActiveSourceList>
+										<ActiveSource Name="612642__newlocknew__heart-beat-2calm-rhythmblood-flows-in-the-veins6lrs" ID="{45A748EE-1132-4FC1-830E-00751F15552C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="SFX" ID="{749AB36D-724D-48F0-8D6B-C6E8EE9AB51D}" ShortID="562835270">
@@ -749,28 +927,6 @@
 										<ActiveSource Name="whispers" ID="{BDBD8637-0C0A-4703-A4B5-7CA77FE19B65}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="612642__newlocknew__heart-beat-2calm-rhythmblood-flows-in-the-veins6lrs" ID="{D67F3482-E7FF-4137-86F6-7127C79995D5}" ShortID="665341597">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E6D7B101-A726-4F01-A45E-091B777418A5}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B62E7A4-05DA-40FE-8B55-7B6A98AC5198}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="612642__newlocknew__heart-beat-2calm-rhythmblood-flows-in-the-veins6lrs" ID="{45A748EE-1132-4FC1-830E-00751F15552C}">
-											<Language>SFX</Language>
-											<AudioFile>612642__newlocknew__heart-beat-2calm-rhythmblood-flows-in-the-veins6lrs.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="69067520"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="612642__newlocknew__heart-beat-2calm-rhythmblood-flows-in-the-veins6lrs" ID="{45A748EE-1132-4FC1-830E-00751F15552C}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
 								<Sound Name="22039__erdie__breathe" ID="{6BFE27C9-B27D-4CA6-9B8E-74530288B6B3}" ShortID="430300853">
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -1022,6 +1178,55 @@
 								<ActiveSource Name="whispers" ID="{A340F4E7-B254-45A0-AEA8-90289EBE2DA9}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Scream" ID="{338C2CB4-9719-4608-8096-B06AD357B8F5}" ShortID="636809226">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E6D7B101-A726-4F01-A45E-091B777418A5}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B62E7A4-05DA-40FE-8B55-7B6A98AC5198}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Scream" ID="{8C0CE94B-A489-4A4C-860A-0884FF43B068}">
+									<Language>SFX</Language>
+									<AudioFile>Scream.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="282070401"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Scream" ID="{8C0CE94B-A489-4A4C-860A-0884FF43B068}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="tree_felled" ID="{B08EDED8-D9DD-4605-A3A2-67A1FE586010}" ShortID="895419688">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E6D7B101-A726-4F01-A45E-091B777418A5}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B62E7A4-05DA-40FE-8B55-7B6A98AC5198}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="tree_felled" ID="{676757AF-E0F2-485E-87BA-225EF56875A2}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.4140340718356"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.84716162537083"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>tree_felled.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="88856888"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="tree_felled" ID="{676757AF-E0F2-485E-87BA-225EF56875A2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="RealTimeSounds" ID="{F5071038-E415-4511-B87B-B2FB8B907C9B}" ShortID="4487672">
@@ -1235,6 +1440,50 @@
 								<ActiveSource Name="whispers" ID="{E6E19A71-28C4-4691-9720-35E4F111C34E}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Scream" ID="{4284411E-E1DC-4FFF-A597-580192D2B9C3}" ShortID="572777056">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E6D7B101-A726-4F01-A45E-091B777418A5}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B62E7A4-05DA-40FE-8B55-7B6A98AC5198}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Scream" ID="{C3C204BF-CFF9-421C-BBFF-0A77104386DE}">
+									<Language>SFX</Language>
+									<AudioFile>Scream.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="282070401"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Scream" ID="{C3C204BF-CFF9-421C-BBFF-0A77104386DE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="tree_felled" ID="{978342BB-DC75-4006-8531-C8CD71F68C04}" ShortID="218629006">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E6D7B101-A726-4F01-A45E-091B777418A5}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B62E7A4-05DA-40FE-8B55-7B6A98AC5198}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="tree_felled" ID="{F5F49E90-AF48-44E3-8E9D-BCF824613D85}">
+									<Language>SFX</Language>
+									<AudioFile>tree_felled.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="88856888"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="tree_felled" ID="{F5F49E90-AF48-44E3-8E9D-BCF824613D85}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 					<ObjectLists>
 						<ObjectList Name="RTPC">
@@ -1259,6 +1508,7 @@
 																<XPos>0</XPos>
 																<YPos>-200</YPos>
 																<Flags>5</Flags>
+																<SegmentShape>Log2</SegmentShape>
 															</Point>
 															<Point>
 																<XPos>100</XPos>

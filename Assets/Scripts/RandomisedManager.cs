@@ -29,7 +29,7 @@ public class RandomisedManager : MonoBehaviour
         // Find Game Manager
         targetValue = GameObject.Find("GameManager").GetComponent<GameTimer>().targetValue;
 
-        foreach (GameObject child in soundManager.transform)
+        foreach (Transform child in soundManager.transform)
         {
             if (child.tag == "Sound")
             {

@@ -13,6 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CROWAMBIENCE = 3320807920U;
+        static const AkUniqueID HEARTBEAT = 2179486487U;
         static const AkUniqueID HORRORAMBIENCE = 1938073225U;
         static const AkUniqueID RAINFALL = 511469240U;
         static const AkUniqueID RANDOMFOOTSTEP = 1721495266U;
@@ -22,6 +24,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID RTPC_AMBIENCEVOLUME = 3644905565U;
         static const AkUniqueID RTPC_PLAYERECG = 4032813715U;
         static const AkUniqueID RTPC_PLAYERRSP = 3498048591U;
         static const AkUniqueID RTPC_PLAYERVOLUME = 525170758U;

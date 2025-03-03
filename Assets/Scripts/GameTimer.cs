@@ -5,10 +5,6 @@ using TMPro;
 
 public class GameTimer : MonoBehaviour
 {
-    public class TimeStarted
-    {
-        public bool timeStarted = false;
-    }
 
     // UI
     [SerializeField] TMP_Text timerText;
@@ -16,15 +12,23 @@ public class GameTimer : MonoBehaviour
     [SerializeField] string SceneName;
     public bool timeStarted = false;
 
+    // Timer
+    float timer;
+
     //Wwise
     [SerializeField] AK.Wwise.RTPC volumeRTPC;
+    [SerializeField] AK.Wwise.RTPC ambienceRTPC;
     public float currentValue, targetValue = 100;
+    public float ambienceCurrent, ambienceTarget = 0;
     [SerializeField] float easeSpeed = 0.3f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         volumeRTPC.SetGlobalValue(currentValue);
+        ambienceRTPC.SetGlobalValue(ambienceCurrent);
+        timer = Random.Range(0, 15);
+        timeStarted = true;
     }
 
     // Update is called once per frame
@@ -34,6 +38,21 @@ public class GameTimer : MonoBehaviour
         {
             // Decrease time by delta time
             totalTime -= Time.deltaTime;
+            timer -= Time.deltaTime;
+
+            if (timer <= 0) 
+            {
+                int randomVolume = Random.Range(0, 25);
+                ambienceTarget = randomVolume;
+                timer = Random.Range(0, 15);
+            }
+
+            currentValue = Mathf.Lerp(currentValue, targetValue, easeSpeed * Time.deltaTime);
+            ambienceCurrent = Mathf.Lerp(ambienceCurrent, ambienceTarget, easeSpeed * Time.deltaTime);
+
+            volumeRTPC.SetGlobalValue(currentValue);
+            ambienceRTPC.SetGlobalValue(ambienceCurrent);
+
         }
 
         if (totalTime <= 0)
@@ -44,8 +63,7 @@ public class GameTimer : MonoBehaviour
             SceneManager.LoadScene(SceneName);
         }
 
-        currentValue = Mathf.Lerp(currentValue, targetValue, easeSpeed * Time.deltaTime);
-        volumeRTPC.SetGlobalValue(currentValue);
+        
     }
 
     private void OnGUI()

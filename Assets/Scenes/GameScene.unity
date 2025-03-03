@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 192336468}
   - component: {fileID: 192336472}
   - component: {fileID: 192336473}
+  - component: {fileID: 192336474}
   m_Layer: 0
   m_Name: RandomisedAttenuation
   m_TagString: Untagged
@@ -369,6 +370,35 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 5f30bc6bd0d954846ad38d7c658b2889, type: 2}
   soundManager: {fileID: 1869794982}
+--- !u!114 &192336474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192336467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ebf70c2d473804586bf00c90131d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 599a9d1e7bdd67246b61c689094381c8, type: 2}
+  useCallbacks: 0
+  stopSoundOnDestroy: 1
+  Callbacks: []
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
 --- !u!1 &225375651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,6 +1457,8 @@ GameObject:
   m_Component:
   - component: {fileID: 512995015}
   - component: {fileID: 512995014}
+  - component: {fileID: 512995017}
+  - component: {fileID: 512995016}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1447,15 +1479,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1113922129}
-  totalTime: 90
+  totalTime: 600
   SceneName: MenuScene
   timeStarted: 0
   volumeRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 5f30bc6bd0d954846ad38d7c658b2889, type: 2}
+  ambienceRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1232d650cbe1a5042a9e35c7dc00b16c, type: 2}
   currentValue: 0
   targetValue: 100
+  ambienceCurrent: 0
+  ambienceTarget: 0
   easeSpeed: 0.3
 --- !u!4 &512995015
 Transform:
@@ -1473,6 +1511,59 @@ Transform:
   - {fileID: 1051449199}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &512995016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512995013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ebf70c2d473804586bf00c90131d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a6ffd9cd94a56104caebf909c8720493, type: 2}
+  useCallbacks: 0
+  stopSoundOnDestroy: 1
+  Callbacks: []
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+--- !u!114 &512995017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512995013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d042eb1df04e46f418c29c16a34984c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  usePositionOffsetData: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!4 &518933385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1477588318084070245, guid: fd98e04d6121042409274be6d2fb1b3b, type: 3}
@@ -7756,6 +7847,7 @@ GameObject:
   - component: {fileID: 1080290934}
   - component: {fileID: 1080290933}
   - component: {fileID: 1080290936}
+  - component: {fileID: 1080290937}
   m_Layer: 0
   m_Name: RealTimeAttenuation
   m_TagString: Untagged
@@ -7783,7 +7875,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: be15bbf9d8e8b18418704efcda16ecbb, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: ffaee1735d8fb814c8224b74266a4453, type: 2}
   useCallbacks: 0
   stopSoundOnDestroy: 1
   Callbacks: []
@@ -7864,14 +7956,47 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 96e55c5b9f7b4f743a02be0acdc35d12, type: 2}
+  ambienceVolumeRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1232d650cbe1a5042a9e35c7dc00b16c, type: 2}
   realTimeEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: be15bbf9d8e8b18418704efcda16ecbb, type: 2}
   attenuationRange: 20
   AttenuationPosition: {fileID: 1080290935}
   distanceOffset: 0
   soundManager: {fileID: 1869794982}
+--- !u!114 &1080290937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080290932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ebf70c2d473804586bf00c90131d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 599a9d1e7bdd67246b61c689094381c8, type: 2}
+  useCallbacks: 0
+  stopSoundOnDestroy: 1
+  Callbacks: []
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
 --- !u!1 &1113922127
 GameObject:
   m_ObjectHideFlags: 0

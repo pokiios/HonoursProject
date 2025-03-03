@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{42548A6F-EC1C-4AD4-B5E8-4EAC68E71991}",
     "Language": "SFX",
-    "Hash": "{BEE3C813-4070-11E9-FA9D-8816245A2484}",
+    "Hash": "{9781AE8A-02AA-B1CF-D7AA-7D39D6ADD771}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -24,12 +24,36 @@
       "CachePath": "6A/{6A6D2F29-DFC3-9643-69BF-72E22D60F5BF}.wem"
      },
      {
+      "Id": "69067520",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "612642__newlocknew__heart-beat-2calm-rhythmblood-flows-in-the-veins6lrs.wav",
+      "CachePath": "96/{96F0E0BC-1917-578A-AED2-90E7FA80A857}.wem"
+     },
+     {
+      "Id": "88856888",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "tree_felled.wav",
+      "CachePath": "D6/{D6F44F10-5D35-2167-9C38-5EB4BE7654DD}.wem"
+     },
+     {
       "Id": "106835636",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "footstep_grass-003.wav",
       "CachePath": "6D/{6D75F87C-E684-DA22-5261-77C7B6459A8A}.wem"
+     },
+     {
+      "Id": "282070401",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Scream.wav",
+      "CachePath": "85/{85DF8BA5-274F-FAC6-32A9-395648221DB3}.wem"
      },
      {
       "Id": "371272113",
@@ -46,6 +70,14 @@
       "Location": "Memory",
       "ShortName": "running_leaves.wav",
       "CachePath": "26/{26D99D87-2092-2E8B-8869-4757975A318F}.wem"
+     },
+     {
+      "Id": "553768109",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ambience_Forest.wav",
+      "CachePath": "24/{24EFC9FF-DE37-2A0B-7EA6-75B1A71C689F}.wem"
      },
      {
       "Id": "569131726",
@@ -96,6 +128,14 @@
       "CachePath": "E2/{E2024BB3-5A61-5A93-7155-F5CB8CFA0AF9}.wem"
      },
      {
+      "Id": "902788731",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "tree_felled.wav",
+      "CachePath": "4D/{4DC44601-CC4A-515A-FA6F-2A193A45EE16}.wem"
+     },
+     {
       "Id": "986253543",
       "Language": "SFX",
       "Streaming": "false",
@@ -105,6 +145,32 @@
      }
     ],
     "Events": [
+     {
+      "Id": "3320807920",
+      "Name": "CrowAmbience",
+      "ObjectPath": "\\Events\\Default Work Unit\\CrowAmbience",
+      "GUID": "{FFC9C810-8997-41D1-8C3F-6B534B02C8F8}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "553768109"
+       }
+      ]
+     },
+     {
+      "Id": "2179486487",
+      "Name": "Heartbeat",
+      "ObjectPath": "\\Events\\Default Work Unit\\Heartbeat",
+      "GUID": "{1A5CE123-69B9-4D83-9424-A1A261075526}",
+      "DurationType": "OneShot",
+      "DurationMin": "15.901479",
+      "DurationMax": "15.901479",
+      "MediaRefs": [
+       {
+        "Id": "69067520"
+       }
+      ]
+     },
      {
       "Id": "1938073225",
       "Name": "HorrorAmbience",
@@ -170,6 +236,12 @@
       "DurationMax": "14.589667",
       "MediaRefs": [
        {
+        "Id": "88856888"
+       },
+       {
+        "Id": "282070401"
+       },
+       {
         "Id": "394691634"
        },
        {
@@ -191,6 +263,9 @@
       "DurationMax": "14.589667",
       "MediaRefs": [
        {
+        "Id": "282070401"
+       },
+       {
         "Id": "394691634"
        },
        {
@@ -198,6 +273,9 @@
        },
        {
         "Id": "880085475"
+       },
+       {
+        "Id": "902788731"
        }
       ]
      }
@@ -214,10 +292,22 @@
       "Name": "RTPC_Volume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_Volume",
       "GUID": "{3FAB1FC2-BB17-49B2-82C1-05FED64E529F}"
+     },
+     {
+      "Id": "3644905565",
+      "Name": "RTPC_AmbienceVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_AmbienceVolume",
+      "GUID": "{2A6CA830-9437-443D-BC30-370875DA05F5}"
+     },
+     {
+      "Id": "4032813715",
+      "Name": "RTPC_PlayerECG",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_PlayerECG",
+      "GUID": "{5F80409F-22CA-46A5-BACD-CB653DB1B0F1}"
      }
     ]
    }
   ],
-  "FileHash": "{F8A422C1-C239-2E25-05CA-268705DC8892}"
+  "FileHash": "{27F84DE7-7BE6-89BB-EE12-FCEBBDAC1BEE}"
  }
 }

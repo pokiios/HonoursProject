@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7093cb42cf0ce84ba2d92686dd68af21
     GuidInternal: 
-    m_lastTime: -8584609303440135109
+    m_lastTime: -8584606403452401140
     List:
     - name: Main
       guid: 6f8a54421cecd44ab5e84eac68e71991
@@ -94,8 +94,42 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: d9829b2e836c2e468268eb7045074268
     GuidInternal: 
-    m_lastTime: -8584609303452176064
+    m_lastTime: -8584606403536581650
     List:
+    - name: CrowAmbience
+      guid: 10c8c9ff9789d1418c3f6b534b02c8f8
+      id: 3320807920
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9829b2e836c2e468268eb7045074268
+      - ElementName: CrowAmbience
+        ObjectType: 3
+        guid: 10c8c9ff9789d1418c3f6b534b02c8f8
+      Path: Events\Default Work Unit\CrowAmbience
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Heartbeat
+      guid: 23e15c1ab969834d9424a1a261075526
+      id: 2179486487
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9829b2e836c2e468268eb7045074268
+      - ElementName: Heartbeat
+        ObjectType: 3
+        guid: 23e15c1ab969834d9424a1a261075526
+      Path: Events\Default Work Unit\Heartbeat
+      maxAttenuation: 0
+      maxDuration: 15.901479
+      minDuration: 15.901479
     - name: HorrorAmbience
       guid: 11ba05fb14c28841a52f8c44f4744961
       id: 1938073225
@@ -193,8 +227,22 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: d62140c824e0f54c8cf65f6ff4b1fe66
     GuidInternal: 
-    m_lastTime: -8584609303452165969
+    m_lastTime: -8584606418529804352
     List:
+    - name: RTPC_AmbienceVolume
+      guid: 30a86c2a37943d44bc30370875da05f5
+      id: 3644905565
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d62140c824e0f54c8cf65f6ff4b1fe66
+      - ElementName: RTPC_AmbienceVolume
+        ObjectType: 13
+        guid: 30a86c2a37943d44bc30370875da05f5
+      Path: Game Parameters\Default Work Unit\RTPC_AmbienceVolume
     - name: RTPC_PlayerECG
       guid: 9f40805fca22a546bacdcb653db1b0f1
       id: 4032813715
