@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EmpaticaAndBioharness")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57e9e1a2f1339ee40fbbc728add623d4f6cd4294")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3bf8168e609cc3a0409d9e9c6440fc89acc24abd")]
 [assembly: System.Reflection.AssemblyProductAttribute("EmpaticaAndBioharness")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EmpaticaAndBioharness")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

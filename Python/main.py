@@ -95,7 +95,18 @@ def GetRSPSignal(df, sampling_rate):
             print("Warning: RSP signal is flat (all values are identical), skipping processing.")
             return None
         
+        # Apply smoothing to RSP signal to remove noise (e.g., moving average)
+        rsp_series = rsp_series.rolling(window=5, min_periods=1).mean()  # Smoothing with a window of 5
+        
+        # Apply smoothing or interpolation to RSP signal to handle zero or missing values
+        rsp_series = rsp_series.replace(0, np.nan)  # Replace 0s with NaNs
+        rsp_series = rsp_series.interpolate(method='linear', limit_direction='both', axis=0)  # Interpolate
+        
         signal, _ = nk.rsp_process(rsp_series, sampling_rate=sampling_rate)
+        
+        print("Processed RSP Signal:")
+        print(signal.head())  # Display processed RSP signal
+        
         return signal
     except Exception as e:
         print(f"Error processing RSP Signal: {e}")
@@ -110,7 +121,7 @@ def GetRate(signal):
         if "RSP_Rate" in signal.columns:
             # Get the mean rate, handling potential NaN values
             rate = signal["RSP_Rate"].mean()
-            return float(rate) if pd.notna(rate) else 0 
+            return rate if pd.isna(rate) else 0 
         else:
             print("RSP_Rate not found in signal data")
             return 0  # Return a default value
