@@ -29,7 +29,7 @@ public class RealTimeAttenuation : MonoBehaviour
     List<float> RMSSDList = new List<float>();
     List<float> RSPList = new List<float>();
     float averageRSP, averageRMSSD;
-    [SerializeField] TimerScript timerScript;
+    PhysStats stats;
 
 
     float randomRange1, randomRange2;
@@ -47,10 +47,11 @@ public class RealTimeAttenuation : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        stats = UnityEngine.Object.FindFirstObjectByType<PhysStats>();
         RMSSDList = new List<float>();
         RSPList = new List<float>();
-        averageRMSSD = timerScript.averageRMSSD;
-        averageRSP = timerScript.averageRSP;
+        averageRMSSD = stats.avgRMSSD;
+        averageRSP = stats.avgRSP;
 
         // Find Game Manager
         targetValue = GameObject.Find("GameManager").GetComponent<GameTimer>().targetValue;
@@ -134,8 +135,24 @@ public class RealTimeAttenuation : MonoBehaviour
             {
                 try
                 {
-                    float rmssdValue = float.Parse(data_values[1]);
-                    float rspValue = float.Parse(data_values[2]);
+                    float rmssdValue, rspValue;
+                    if (string.IsNullOrEmpty(data_values[1]))
+                    {
+                        rmssdValue = 0.0f; // Default Value
+                    }
+                    else
+                    {
+                        rmssdValue = float.Parse(data_values[1]); // parse as normal
+                    }
+
+                    if (string.IsNullOrEmpty(data_values[2]))
+                    {
+                        rspValue = 0.0f; // Default Value
+                    }
+                    else
+                    {
+                        rspValue = float.Parse(data_values[2]); // parse as normal
+                    }
 
                     RMSSDList.Add(rmssdValue);
                     RSPList.Add(rspValue);
@@ -168,37 +185,45 @@ public class RealTimeAttenuation : MonoBehaviour
     void EcgManager()
     {
         currRMSSD = RMSSDList.LastOrDefault();
-        currRMSSD = math.clamp(currRMSSD, 0, 100);
+        currRMSSD = math.clamp(currRMSSD, 0, 50);
 
         ecgRTPC.SetGlobalValue(currRMSSD);
 
-        // If number higher, make louder, add more sounds?
-        // Should it be randomised or based on max fear/category?
 
-        // A lot of magic numbers to be fixed, need to tailor to more accurate rmssd values
-        // Changes distance to player based on rmssd
-        if (currRMSSD >= 100)
+        // MAX RMSSD Recorded: 31
+        // MIN RMSSD Recorded: 12
+        // AVERAGE (In a minute) 20.81
+
+        if (currRMSSD > averageRMSSD - 2)
         {
-            attenuationRange = 50;
+            // Slightly different from average
+            attenuationRange = 16;
         }
-        else if (currRMSSD >= 60)
+        else if (currRMSSD > averageRMSSD - 4)
         {
-            attenuationRange = 30;
+            // Higher activity
+            attenuationRange = 12;
         }
-        else if (currRMSSD >= 40)
+        else if (currRMSSD > averageRMSSD - 6)
         {
+            // Higher activity
+            attenuationRange = 8;
+        }
+        else if (currRMSSD > averageRMSSD - 8)
+        {
+            attenuationRange = 4;
+        }
+        else
+        {
+            // Neutral or outlier
             attenuationRange = 20;
-        }
-        else if (currRMSSD < 40)
-        {
-            attenuationRange = 10;
         }
     }
 
     void PlaySound(int randomPlayer)
     {
-        randomRange1 = Random.Range((-rspRTPC.GetGlobalValue() * distanceOffset), (rspRTPC.GetGlobalValue() * distanceOffset));
-        randomRange2 = Random.Range((-rspRTPC.GetGlobalValue() * distanceOffset), (rspRTPC.GetGlobalValue() * distanceOffset));
+        randomRange1 = Random.Range(-attenuationRange, attenuationRange);
+        randomRange2 = Random.Range(-attenuationRange, attenuationRange);
 
         soundPlayer[randomPlayer].transform.position = new Vector3(AttenuationPosition.transform.position.x + randomRange1, AttenuationPosition.transform.position.y, AttenuationPosition.transform.position.z + randomRange2);
 

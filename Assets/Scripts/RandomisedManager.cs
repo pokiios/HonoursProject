@@ -47,7 +47,7 @@ public class RandomisedManager : MonoBehaviour
         // Checks if in trigger area to deal with timer
         if (can_play)
         {
-            timer = (float)Math.Floor(timer - Time.deltaTime);
+            timer -= Time.deltaTime;
             Debug.Log(timer);
         }
 

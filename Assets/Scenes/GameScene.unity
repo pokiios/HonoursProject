@@ -1459,6 +1459,7 @@ GameObject:
   - component: {fileID: 512995014}
   - component: {fileID: 512995017}
   - component: {fileID: 512995016}
+  - component: {fileID: 512995018}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1564,6 +1565,25 @@ MonoBehaviour:
   scalingFactor: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &512995018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512995013}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef1385b91ec7fb45890503dea7a292c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
+  avgPhysText: {fileID: 0}
+  totalTime: 300
+  SceneName: 
+  timeStarted: 0
+  averageRMSSD: 0
+  averageRSP: 0
 --- !u!4 &518933385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1477588318084070245, guid: fd98e04d6121042409274be6d2fb1b3b, type: 3}
@@ -7967,6 +7987,7 @@ MonoBehaviour:
   attenuationRange: 20
   AttenuationPosition: {fileID: 1080290935}
   distanceOffset: 0
+  timerScript: {fileID: 0}
   soundManager: {fileID: 1869794982}
 --- !u!114 &1080290937
 MonoBehaviour:

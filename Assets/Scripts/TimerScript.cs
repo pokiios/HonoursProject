@@ -24,9 +24,12 @@ public class TimerScript : MonoBehaviour
     List<float> RSPList = new List<float>();
     public float averageRMSSD, averageRSP;
 
+    PhysStats stats;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        stats = UnityEngine.Object.FindFirstObjectByType<PhysStats>();
         timeStarted = true;
         RMSSDList = new List<float>();
         RSPList = new List<float>();
@@ -89,83 +92,89 @@ public class TimerScript : MonoBehaviour
         {
             avgPhysText.text = $"Average RMSSD: {averageRMSSD:F2}\nAverage RSP: {averageRSP:F2}";
         }
+
+        stats.NewPhys(averageRMSSD, averageRSP);
     }
 
     private void readCSV()
     {
-        try
-        {
-            // Clear existing data
-            RMSSDList.Clear();
-            RSPList.Clear();
+        // Clear existing data
+        RMSSDList.Clear();
+        RSPList.Clear();
 
-            // Check if file exists
-            if (!File.Exists(csvFile))
+        // Check if file exists
+        if (!File.Exists(csvFile))
+        {
+            Debug.LogError("CSV file not found: " + csvFile);
+            return;
+        }
+
+        // CSV Parsing and sorting
+        StreamReader strReader = new StreamReader(csvFile);
+
+        // Skip the first three header lines
+        for (int i = 0; i < 3; i++)
+        {
+            strReader.ReadLine();
+        }
+
+        // Now process the data rows
+        bool endOfFile = false;
+        while (!endOfFile)
+        {
+            var dataString = strReader.ReadLine();
+            if (dataString == null)
             {
-                Debug.LogError("CSV file not found: " + csvFile);
-                return;
+                endOfFile = true;
+                break;
             }
 
-            // CSV Parsing
-            using (StreamReader strReader = new StreamReader(csvFile))
+            if (string.IsNullOrEmpty(dataString))
             {
-                // Read and skip the header line
-                strReader.ReadLine(); // Skip "Timestamp,RMSSD,RSP"
+                continue;
+            }
+                
 
-                // Now process the data rows
-                int lineNumber = 1; // Start counting from line 1 after header
-                while (!strReader.EndOfStream)
+            var data_values = dataString.Split(',');
+
+            // Make sure we have enough values in the row
+            if (data_values.Length >= 3)
+            {
+                try
                 {
-                    var dataString = strReader.ReadLine();
-                    lineNumber++;
-
-                    if (string.IsNullOrEmpty(dataString))
-                        continue;
-
-                    var data_values = dataString.Split(',');
-
-                    // We expect at least 2 values (Timestamp, RMSSD)
-                    if (data_values.Length >= 2)
+                    float rmssdValue, rspValue;
+                    if (string.IsNullOrEmpty(data_values[1]))
                     {
-                        try
-                        {
-                            // Parse RMSSD (index 1)
-                            string rmssdString = data_values[1].Trim();
-                            if (!string.IsNullOrEmpty(rmssdString) && float.TryParse(rmssdString, out float rmssdValue))
-                            {
-                                RMSSDList.Add(rmssdValue);
-                                Debug.Log($"Added RMSSD: {rmssdValue}");
-                            }
-
-                            // Parse RSP (index 2) if available
-                            if (data_values.Length > 2 && !string.IsNullOrEmpty(data_values[2]))
-                            {
-                                string rspString = data_values[2].Trim();
-                                if (float.TryParse(rspString, out float rspValue))
-                                {
-                                    RSPList.Add(rspValue);
-                                    Debug.Log($"Added RSP: {rspValue}");
-                                }
-                            }
-                        }
-                        catch (System.Exception e)
-                        {
-                            Debug.LogWarning($"Line {lineNumber}: Failed to parse values: {e.Message}");
-                        }
+                        rmssdValue = 0.0f; // Default Value
                     }
                     else
                     {
-                        Debug.LogWarning($"Line {lineNumber}: Not enough values in row: {dataString}");
+                        rmssdValue = float.Parse(data_values[1]); // parse as normal
                     }
+
+                    if (string.IsNullOrEmpty(data_values[2]))
+                    {
+                        rspValue = 0.0f; // Default Value
+                    }
+                    else
+                    {
+                        rspValue = float.Parse(data_values[2]); // parse as normal
+                    }
+
+                    RMSSDList.Add(rmssdValue);
+                    RSPList.Add(rspValue);
+
+                    Debug.Log($"Added values: RMSSD={rmssdValue}, RSP={rspValue}");
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogWarning($"Failed to parse values on line: {dataString}. Error: {e.Message}");
+                    // Optionally, you can continue processing other lines
                 }
 
-                Debug.Log($"Successfully parsed {RMSSDList.Count} RMSSD values and {RSPList.Count} RSP values");
-                calculateAverage();
             }
         }
-        catch (System.Exception e)
-        {
-            Debug.LogError($"Error reading CSV: {e.Message}");
-        }
+        strReader.Close();
+        calculateAverage();
     }
 }

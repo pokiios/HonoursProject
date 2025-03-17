@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: f0394ac7dc0400c4caced03dbc307b01
+  - enabled: 1
+    path: Assets/Scenes/RestingScene.unity
+    guid: f2a61ec889e393f488a1ff8fa635a29a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
