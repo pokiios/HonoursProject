@@ -4,7 +4,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
-using JetBrains.Annotations;
+using Unity.Mathematics;
+using System;
 
 public class RandomisedManager : MonoBehaviour
 {
@@ -36,9 +37,9 @@ public class RandomisedManager : MonoBehaviour
                 soundPlayer.Add(child.gameObject);
             }
         }
-        timer = Random.Range(5,15);
-        randomRange1 = Random.Range(-attenuationRange, attenuationRange);
-        randomRange2 = Random.Range(-attenuationRange, attenuationRange);
+        timer = UnityEngine.Random.Range(5,15);
+        randomRange1 = UnityEngine.Random.Range(-attenuationRange, attenuationRange);
+        randomRange2 = UnityEngine.Random.Range(-attenuationRange, attenuationRange);
     }
 
     void Update()
@@ -46,15 +47,15 @@ public class RandomisedManager : MonoBehaviour
         // Checks if in trigger area to deal with timer
         if (can_play)
         {
-            timer -= Time.deltaTime;
+            timer = (float)Math.Floor(timer - Time.deltaTime);
             Debug.Log(timer);
         }
 
         if (timer <= 0)
         {
             // If timer is complete, pick a random spot within attenuation zone to play sound, restart the timer and play a sound
-            timer = Random.Range(5,15);
-            int randomPlayer = Random.Range(0, soundPlayer.Count);
+            timer = UnityEngine.Random.Range(5,15);
+            int randomPlayer = UnityEngine.Random.Range(0, soundPlayer.Count);
             playSound(randomPlayer);
         }
     }
@@ -76,8 +77,8 @@ public class RandomisedManager : MonoBehaviour
     {
         if (can_play == true)
         {
-            randomRange1 = Random.Range(-attenuationRange, attenuationRange);
-            randomRange2 = Random.Range(-attenuationRange, attenuationRange);
+            randomRange1 = UnityEngine.Random.Range(-attenuationRange, attenuationRange);
+            randomRange2 = UnityEngine.Random.Range(-attenuationRange, attenuationRange);
             soundPlayer[randomPlayer].transform.position = new Vector3(attenuationPosition.transform.position.x + randomRange1, attenuationPosition.transform.position.y, attenuationPosition.transform.position.z + randomRange2);
             randomisedSounds.Post(soundPlayer[randomPlayer]);
             Debug.Log("Playing Sound at " + soundPlayer[randomPlayer].transform.position);

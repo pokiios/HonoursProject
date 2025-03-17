@@ -26,7 +26,11 @@ public class RealTimeAttenuation : MonoBehaviour
 
     // Physiological stuff
     float currRMSSD, currBreathingRate;
-    List<float> RMSSDList, RSPList;
+    List<float> RMSSDList = new List<float>();
+    List<float> RSPList = new List<float>();
+    float averageRSP, averageRMSSD;
+    [SerializeField] TimerScript timerScript;
+
 
     float randomRange1, randomRange2;
 
@@ -34,7 +38,7 @@ public class RealTimeAttenuation : MonoBehaviour
     public Transform soundManager;
 
     // File Path
-    string csvFile = "../CSV/CollectedData.csv";
+    string csvFile = @"D:/_School/HonoursProject/Assets/CSV/CollectedData.csv";
 
     // Other
     float timer;
@@ -43,6 +47,11 @@ public class RealTimeAttenuation : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        RMSSDList = new List<float>();
+        RSPList = new List<float>();
+        averageRMSSD = timerScript.averageRMSSD;
+        averageRSP = timerScript.averageRSP;
+
         // Find Game Manager
         targetValue = GameObject.Find("GameManager").GetComponent<GameTimer>().targetValue;
 
@@ -60,7 +69,7 @@ public class RealTimeAttenuation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
+        timer = (float)Math.Floor(timer - Time.deltaTime);
 
         if (can_play)
         {
@@ -81,55 +90,67 @@ public class RealTimeAttenuation : MonoBehaviour
     // Gets data
     void DataManager()
     {
+        // Clear existing data
+        RMSSDList.Clear();
+        RSPList.Clear();
+
+        // Check if file exists
+        if (!File.Exists(csvFile))
+        {
+            Debug.LogError("CSV file not found: " + csvFile);
+            return;
+        }
+
         // CSV Parsing and sorting
-        int counter = 1;
         StreamReader strReader = new StreamReader(csvFile);
+
+        // Skip the first three header lines
+        for (int i = 0; i < 3; i++)
+        {
+            strReader.ReadLine();
+        }
+
+        // Now process the data rows
         bool endOfFile = false;
         while (!endOfFile)
         {
             var dataString = strReader.ReadLine();
-
             if (dataString == null)
             {
                 endOfFile = true;
                 break;
             }
+
+            if (string.IsNullOrEmpty(dataString))
+            {
+                continue;
+            }
+
+
             var data_values = dataString.Split(',');
 
-            for (int i = 0; i < data_values.Length; i++)
+            // Make sure we have enough values in the row
+            if (data_values.Length >= 3)
             {
-                // Don't go through the first 6 entries
-                if (i < 6)
+                try
                 {
-                    break;
+                    float rmssdValue = float.Parse(data_values[1]);
+                    float rspValue = float.Parse(data_values[2]);
+
+                    RMSSDList.Add(rmssdValue);
+                    RSPList.Add(rspValue);
+
+                    Debug.Log($"Added values: RMSSD={rmssdValue}, RSP={rspValue}");
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogWarning($"Failed to parse values on line: {dataString}. Error: {e.Message}");
+                    // Optionally, you can continue processing other lines
                 }
 
-
-                // Sort categories based on where the counter is
-                switch (counter)
-                {
-                    case 1:
-                        break;
-                    case 2:
-                        RMSSDList.Add(float.Parse(data_values[i]));
-                        break;
-                    case 3:
-                        RSPList.Add(float.Parse(data_values[i]));
-                        break;
-                    default:
-                        break;
-                }
-
-                // Add to counter which sorts categories
-                counter++;
-
-                // If counter gets above 3, reset it
-                if (counter > 3)
-                {
-                    counter = 1;
-                }
             }
         }
+        strReader.Close();
     }
 
     // Manages effects that are handled by rsp_df
