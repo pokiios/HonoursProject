@@ -7868,6 +7868,7 @@ GameObject:
   - component: {fileID: 1080290933}
   - component: {fileID: 1080290936}
   - component: {fileID: 1080290937}
+  - component: {fileID: 1080290938}
   m_Layer: 0
   m_Name: RealTimeAttenuation
   m_TagString: Untagged
@@ -7987,7 +7988,6 @@ MonoBehaviour:
   attenuationRange: 20
   AttenuationPosition: {fileID: 1080290935}
   distanceOffset: 0
-  timerScript: {fileID: 0}
   soundManager: {fileID: 1869794982}
 --- !u!114 &1080290937
 MonoBehaviour:
@@ -8018,6 +8018,27 @@ MonoBehaviour:
   eventIdInternal: 0
   valueGuidInternal: 
   m_callbackDataInternal: {fileID: 0}
+--- !u!135 &1080290938
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080290932}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1113922127
 GameObject:
   m_ObjectHideFlags: 0
@@ -9834,7 +9855,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.9875945, b: 0.8349056, a: 1}
-  m_Intensity: 0
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
