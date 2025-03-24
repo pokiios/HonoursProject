@@ -1,0 +1,81 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1355168291",
+    "Type": "User",
+    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Language": "SFX",
+    "Hash": "{26E76C54-5719-ACF0-FFCB-9655A18D28C5}",
+    "ObjectPath": "Init",
+    "ShortName": "Init",
+    "Path": "Init.bnk",
+    "Plugins": {
+     "AudioDevices": [
+      {
+       "Id": "2317455096",
+       "Name": "No_Output",
+       "ObjectPath": "\\Audio Devices\\Default Work Unit\\No_Output",
+       "GUID": "{424424DF-9818-4D3D-9F77-4CD718EC3D6B}",
+       "LibName": "No Output",
+       "LibId": "11862023"
+      },
+      {
+       "Id": "3859886410",
+       "Name": "System",
+       "ObjectPath": "\\Audio Devices\\Default Work Unit\\System",
+       "GUID": "{C09FE662-7A36-4D1C-A8EA-C4104BEA8F26}",
+       "LibName": "System",
+       "LibId": "11403271"
+      }
+     ]
+    },
+    "Busses": [
+     {
+      "Id": "3803692087",
+      "Name": "Master Audio Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "525170758",
+      "Name": "RTPC_PlayerVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_PlayerVolume",
+      "GUID": "{2B59D1A0-B0C3-41CE-BD70-BF78E45765D1}"
+     },
+     {
+      "Id": "1514330293",
+      "Name": "RTPC_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_Volume",
+      "GUID": "{3FAB1FC2-BB17-49B2-82C1-05FED64E529F}"
+     },
+     {
+      "Id": "3498048591",
+      "Name": "RTPC_PlayerRSP",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_PlayerRSP",
+      "GUID": "{114CAE44-57F8-47C1-BA34-D7660EBD6B66}"
+     },
+     {
+      "Id": "3644905565",
+      "Name": "RTPC_AmbienceVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_AmbienceVolume",
+      "GUID": "{2A6CA830-9437-443D-BC30-370875DA05F5}"
+     },
+     {
+      "Id": "4032813715",
+      "Name": "RTPC_PlayerECG",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPC_PlayerECG",
+      "GUID": "{5F80409F-22CA-46A5-BACD-CB653DB1B0F1}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{84DF823F-A79D-E2CA-827E-18552F6CB569}"
+ }
+}
