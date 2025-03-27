@@ -80,7 +80,7 @@ public class GameTimer : MonoBehaviour
             SceneManager.LoadScene(SceneName);
         }
 
-        // if timer is divisible by 10, call data manager (every 10 seconds that pass)
+        // if total Time is divisible by 10, call data manager (every 10 seconds that pass)
         if (totalTime % 10 == 0)
         {
             DataManager();
