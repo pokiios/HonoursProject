@@ -669,7 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1274437609}
   avgPhysText: {fileID: 1508601535}
-  totalTime: 20
+  totalTime: 300
   SceneName: GameScene
   timeStarted: 0
   averageRMSSD: 0

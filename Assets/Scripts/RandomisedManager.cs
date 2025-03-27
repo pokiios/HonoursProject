@@ -58,6 +58,8 @@ public class RandomisedManager : MonoBehaviour
             int randomPlayer = UnityEngine.Random.Range(0, soundPlayer.Count);
             playSound(randomPlayer);
         }
+
+
     }
     void OnTriggerEnter(Collider other)
     {

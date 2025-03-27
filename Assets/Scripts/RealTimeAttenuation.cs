@@ -7,6 +7,7 @@ using Unity.Mathematics;
 using Random = UnityEngine.Random;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 
 public class RealTimeAttenuation : MonoBehaviour
 {
@@ -25,11 +26,12 @@ public class RealTimeAttenuation : MonoBehaviour
     [SerializeField] float distanceOffset;
 
     // Physiological stuff
-    float currRMSSD, currBreathingRate;
-    List<float> RMSSDList = new List<float>();
-    List<float> RSPList = new List<float>();
-    float averageRSP, averageRMSSD;
+    float currentRMSSD, currentRSP;
+    float averageRMSSD, averageRSP;
+    List<float> rmssdList, rspList;
     PhysStats stats;
+    GameTimer gameManager;
+    
 
 
     float randomRange1, randomRange2;
@@ -47,9 +49,8 @@ public class RealTimeAttenuation : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Find PhysStats
         stats = UnityEngine.Object.FindFirstObjectByType<PhysStats>();
-        RMSSDList = new List<float>();
-        RSPList = new List<float>();
         averageRMSSD = stats.avgRMSSD;
         averageRSP = stats.avgRSP;
 
@@ -70,6 +71,7 @@ public class RealTimeAttenuation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Timer for sound
         timer = (float)Math.Floor(timer - Time.deltaTime);
 
         if (can_play)
@@ -77,9 +79,10 @@ public class RealTimeAttenuation : MonoBehaviour
             if (timer == 0)
             {
                 int randomPlayer = Random.Range(0, soundPlayer.Count);
-                DataManager();
                 PlaySound(randomPlayer);
-                timer = Random.Range(ecgRTPC.GetGlobalValue(), ecgRTPC.GetGlobalValue() * 2);
+                float clampedECG = math.clamp(ecgRTPC.GetGlobalValue()/3, 10, 20);
+                timer = Random.Range(clampedECG, clampedECG + 5);
+                gameManager = GameObject.Find("GameManager").GetComponent<GameTimer>();
             }
 
             RspManager();
@@ -88,138 +91,59 @@ public class RealTimeAttenuation : MonoBehaviour
 
     }
 
-    // Gets data
-    void DataManager()
-    {
-        // Clear existing data
-        RMSSDList.Clear();
-        RSPList.Clear();
-
-        // Check if file exists
-        if (!File.Exists(csvFile))
-        {
-            Debug.LogError("CSV file not found: " + csvFile);
-            return;
-        }
-
-        // CSV Parsing and sorting
-        StreamReader strReader = new StreamReader(csvFile);
-
-        // Skip the first three header lines
-        for (int i = 0; i < 3; i++)
-        {
-            strReader.ReadLine();
-        }
-
-        // Now process the data rows
-        bool endOfFile = false;
-        while (!endOfFile)
-        {
-            var dataString = strReader.ReadLine();
-            if (dataString == null)
-            {
-                endOfFile = true;
-                break;
-            }
-
-            if (string.IsNullOrEmpty(dataString))
-            {
-                continue;
-            }
-
-
-            var data_values = dataString.Split(',');
-
-            // Make sure we have enough values in the row
-            if (data_values.Length >= 3)
-            {
-                try
-                {
-                    float rmssdValue, rspValue;
-                    if (string.IsNullOrEmpty(data_values[1]))
-                    {
-                        rmssdValue = 0.0f; // Default Value
-                    }
-                    else
-                    {
-                        rmssdValue = float.Parse(data_values[1]); // parse as normal
-                    }
-
-                    if (string.IsNullOrEmpty(data_values[2]))
-                    {
-                        rspValue = 0.0f; // Default Value
-                    }
-                    else
-                    {
-                        rspValue = float.Parse(data_values[2]); // parse as normal
-                    }
-
-                    RMSSDList.Add(rmssdValue);
-                    RSPList.Add(rspValue);
-
-                    Debug.Log($"Added values: RMSSD={rmssdValue}, RSP={rspValue}");
-                }
-                catch (System.Exception e)
-                {
-                    Debug.LogWarning($"Failed to parse values on line: {dataString}. Error: {e.Message}");
-                    // Optionally, you can continue processing other lines
-                }
-
-            }
-        }
-        strReader.Close();
-    }
 
     // Manages effects that are handled by rsp_df
     void RspManager()
     {
         // Change volume based on rsp
-        currBreathingRate = RSPList.LastOrDefault();
-        currBreathingRate = math.clamp(currBreathingRate, 0, 100);
+        currentRSP = gameManager.RSPList.LastOrDefault();
+        currentRSP = math.clamp(currentRSP, 0, 100);
 
-        playerVolumeRTPC.SetGlobalValue(currBreathingRate * 2);
-        ambienceVolumeRTPC.SetGlobalValue(currBreathingRate * 2);
+        playerVolumeRTPC.SetGlobalValue(currentRSP * 2);
+        ambienceVolumeRTPC.SetGlobalValue(currentRSP * 2);
     }
 
     // Manages effects that are handled by ecg_df
     void EcgManager()
     {
-        currRMSSD = RMSSDList.LastOrDefault();
-        currRMSSD = math.clamp(currRMSSD, 0, 50);
+        currentRMSSD = gameManager.RMSSDList.LastOrDefault();
+        currentRMSSD = math.clamp(currentRMSSD, 0, 100);
 
-        ecgRTPC.SetGlobalValue(currRMSSD);
+        ecgRTPC.SetGlobalValue(currentRMSSD);
 
 
-        // MAX RMSSD Recorded: 31
+        // MAX RMSSD Recorded: 119
         // MIN RMSSD Recorded: 12
         // AVERAGE (In a minute) 20.81
 
-        if (currRMSSD > averageRMSSD - 2)
+        
+        if (currentRMSSD > averageRMSSD - 10)
         {
             // Slightly different from average
             attenuationRange = 16;
         }
-        else if (currRMSSD > averageRMSSD - 4)
+        else if (currentRMSSD > averageRMSSD - 15)
         {
             // Higher activity
             attenuationRange = 12;
         }
-        else if (currRMSSD > averageRMSSD - 6)
+        else if (currentRMSSD > averageRMSSD - 20)
         {
             // Higher activity
             attenuationRange = 8;
         }
-        else if (currRMSSD > averageRMSSD - 8)
+        else if (currentRMSSD > averageRMSSD - 25)
         {
             attenuationRange = 4;
         }
         else
         {
             // Neutral or outlier
-            attenuationRange = 20;
+            attenuationRange = 12;
         }
     }
 
+    // Play sound at random location
     void PlaySound(int randomPlayer)
     {
         randomRange1 = Random.Range(-attenuationRange, attenuationRange);
@@ -230,12 +154,14 @@ public class RealTimeAttenuation : MonoBehaviour
         realTimeEvent.Post(soundPlayer[randomPlayer]);
     }
 
+    // When player enters trigger
     void OnTriggerEnter(Collider other)
     {
         targetValue = 50f;
         can_play = true;
     }
 
+    // When player exits trigger
     void OnTriggerExit(Collider other)
     {
         targetValue = 100f;

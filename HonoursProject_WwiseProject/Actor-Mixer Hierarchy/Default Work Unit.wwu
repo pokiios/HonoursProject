@@ -560,10 +560,11 @@
 																				<XPos>0</XPos>
 																				<YPos>-415</YPos>
 																				<Flags>5</Flags>
+																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
 																				<XPos>100</XPos>
-																				<YPos>1019</YPos>
+																				<YPos>546</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -593,7 +594,7 @@
 																		<PointList>
 																			<Point>
 																				<XPos>0</XPos>
-																				<YPos>-200</YPos>
+																				<YPos>-11.9771</YPos>
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
@@ -1476,7 +1477,7 @@
 									<Language>SFX</Language>
 									<AudioFile>tree_felled.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="88856888"/>
+										<MediaID ID="902788731"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
@@ -1506,9 +1507,9 @@
 														<PointList>
 															<Point>
 																<XPos>0</XPos>
-																<YPos>-200</YPos>
+																<YPos>-120</YPos>
 																<Flags>5</Flags>
-																<SegmentShape>Log2</SegmentShape>
+																<SegmentShape>InvertedSCurve</SegmentShape>
 															</Point>
 															<Point>
 																<XPos>100</XPos>

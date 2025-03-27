@@ -1491,11 +1491,23 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 1232d650cbe1a5042a9e35c7dc00b16c, type: 2}
+  ecgRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   currentValue: 0
   targetValue: 100
   ambienceCurrent: 0
   ambienceTarget: 0
+  ecgCurrent: 0
+  ecgTarget: 0
+  rspCurrent: 0
+  rspTarget: 0
   easeSpeed: 0.3
+  RMSSDList: []
+  RSPList: []
+  averageRSP: 0
+  averageRMSSD: 0
 --- !u!4 &512995015
 Transform:
   m_ObjectHideFlags: 0
@@ -8073,8 +8085,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 30, y: 10}
-  m_SizeDelta: {x: 50, y: 10}
+  m_AnchoredPosition: {x: 50, y: 25}
+  m_SizeDelta: {x: 70, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113922129
 MonoBehaviour:
@@ -8123,8 +8135,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8139,7 +8151,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -9855,7 +9867,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.9875945, b: 0.8349056, a: 1}
-  m_Intensity: 2
+  m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

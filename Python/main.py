@@ -52,11 +52,11 @@ def SegmentData(df, start_time, end_time=None):
 
 
 # Getting Signal from ECG
-def GetECGSignal(df, sampling_rate):
+def GetECGSignal(df, ecg_sampling_rate):
     if df is None:
         return None
     try:
-        signal, _ = nk.ecg_process(df[0], sampling_rate = sampling_rate)
+        signal, _ = nk.ecg_process(df[0], sampling_rate = ecg_sampling_rate)
         return signal
     except Exception as e:
         print(f"Error processing ECG Signal, returning None. {e}")
@@ -69,47 +69,31 @@ def GetPeaks(signal):
     return signal["ECG_R_Peaks"]
 
 # Getting The RMSSD from the Peaks (Smaller number means higher activity)
-def GetRMSSD(peaks, sampling_rate):
+def GetRMSSD(peaks, ecg_sampling_rate):
     if peaks is None:
         return None
     try:
-        hrv_out = nk.hrv_time(peaks, sampling_rate = sampling_rate)
+        hrv_out = nk.hrv_time(peaks, sampling_rate = ecg_sampling_rate)
         return hrv_out['HRV_RMSSD'].values[0]
     except Exception as e:
         print(f"Error Extracting ECG Features, Returning None. {e}")
         return None
 
 # Geting the RSP Signal
-def GetRSPSignal(df, sampling_rate):
-    if df is None or df.empty:
-        print("RSP DataFrame is empty or None, skipping RSP processing.")
+def GetRSPSignal(df, rsp_sampling_rate):
+    if df is None:
         return None
     try:
         if len(df) < 2:  # Check if data is too small
             print("RSP data too small for processing.")
             return None
 
-        rsp_series = df[0].astype(float)  # Ensure numeric conversion
-        
-        if rsp_series.nunique() == 1:  # Check if all values are the same
-            print("Warning: RSP signal is flat (all values are identical), skipping processing.")
-            return None
-        
-        # Apply smoothing to RSP signal to remove noise (e.g., moving average)
-        rsp_series = rsp_series.rolling(window=5, min_periods=1).mean()  # Smoothing with a window of 5
-        
-        # Apply smoothing or interpolation to RSP signal to handle zero or missing values
         rsp_series = rsp_series.replace(0, np.nan)  # Replace 0s with NaNs
-        rsp_series = rsp_series.interpolate(method='linear', limit_direction='both', axis=0)  # Interpolate
-        
-        signal, _ = nk.rsp_process(rsp_series, sampling_rate=sampling_rate)
-        
-        print("Processed RSP Signal:")
-        print(signal.head())  # Display processed RSP signal
-        
+        signal, _ = nk.rsp_process(df[1], sampling_rate = rsp_sampling_rate)
         return signal
+    
     except Exception as e:
-        print(f"Error processing RSP Signal: {e}")
+        print(f"Error processing RSP Signal, returning None. {e}")
         return None
 
     
@@ -120,7 +104,7 @@ def GetRate(signal):
     try:
         if "RSP_Rate" in signal.columns:
             # Get the mean rate, handling potential NaN values
-            rate = signal["RSP_Rate"].mean()
+            rate = signal["RSP_Rate"]
             return rate if pd.isna(rate) else 0 
         else:
             print("RSP_Rate not found in signal data")
@@ -193,7 +177,6 @@ if __name__ == "__main__":
 
             # Load and parse rsp data
             rsp_df = LoadFile(path, rsp_filename)
-            
             rsp_df = SegmentData(rsp_df, data_segment_start_time, data_segment_end_time)
                 
             if rsp_df is not None and len(rsp_df) >= 2:
@@ -201,7 +184,7 @@ if __name__ == "__main__":
                 rsp_rate = GetRate(rsp_signal)
             else:
                 print("RSP DataFrame is either None or does not have enough data for processing.")
-                rsp_rate = None  # Set to None or a default value
+                rsp_rate = GetRate(None)  # Set to None or a default value
             
             new_row = { 
                 'Timestamp': [timer],
