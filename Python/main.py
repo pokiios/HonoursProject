@@ -63,13 +63,13 @@ def GetECGSignal(df, ecg_sampling_rate):
         return None
 
 # Getting Peaks from processed ECG Signal
-def GetPeaks(signal):
+def GetECGPeaks(signal):
     if signal is None:
         return None
     return signal["ECG_R_Peaks"]
 
 # Getting The RMSSD from the Peaks (Smaller number means higher activity)
-def GetRMSSD(peaks, ecg_sampling_rate):
+def GetECGRMSSD(peaks, ecg_sampling_rate):
     if peaks is None:
         return None
     try:
@@ -81,53 +81,43 @@ def GetRMSSD(peaks, ecg_sampling_rate):
 
 # Geting the RSP Signal
 def GetRSPSignal(df, rsp_sampling_rate):
+    # Check if the DataFrame is None or empty
     if df is None:
         return None
     try:
-        if len(df) < 2:  # Check if data is too small
-            print("RSP data too small for processing.")
-            return None
-
-        rsp_series = rsp_series.replace(0, np.nan)  # Replace 0s with NaNs
-        signal, _ = nk.rsp_process(df[1], sampling_rate = rsp_sampling_rate)
+        signal, _ = nk.rsp_process(df[0], sampling_rate = rsp_sampling_rate)
         return signal
-    
     except Exception as e:
         print(f"Error processing RSP Signal, returning None. {e}")
         return None
 
     
-def GetRate(signal):
+def GetRSPRate(signal):
+    # Check if the signal is None or empty
     if signal is None:
         return None
+    
     # Check if RSP_Rate exists in the signal DataFrame
     try:
-        if "RSP_Rate" in signal.columns:
-            # Get the mean rate, handling potential NaN values
-            rate = signal["RSP_Rate"]
-            return rate if pd.isna(rate) else 0 
-        else:
-            print("RSP_Rate not found in signal data")
-            return 0  # Return a default value
+        rate = signal["RSP_Rate"]
+        return rate if pd.isna(rate) else 0 
     except Exception as e:
         print(f"Error processing RSP Rate: {e}")
         return 0
 
-def KeyboardMonitor():
-    global should_exit
+def KeyMonitor():
+    global should_exit # Global flag for quitting program
     if keyboard.read_key() == 'q':
         should_exit = True
         print("Exit key has been pressed, closing program...")
 
 if __name__ == "__main__":
-    warnings.filterwarnings("ignore")
- 
-    path = (r"D:\_School\HonoursProject\Python\bioharness\bin\Debug\netcoreapp3.1\Experiment\Session")
+    path = (r"D:\_School\HonoursProject\Python\bioharness\bin\Debug\netcoreapp3.1\Experiment\Session") # Raw Filepath
     ecg_filename = "ecgLog.csv"
     rsp_filename = "breathingLog.csv"
-    ecg_sampling_rate = 250 # hz
-    rsp_sampling_rate = 18 # hz
-    reading_times = 10
+    ecg_sampling_rate = 250 # Samples per Second (Sourced from BioHarness 3.0 Documentation)
+    rsp_sampling_rate = 18 # Samples per Second (Sourced from BioHarness 3.0 Documentation)
+    reading_times = 30 # Seconds between readings
     timer = 0
     print("Welcome to the data processing application!\n----------------------------------------")
     print("Press q to Exit program.")
@@ -138,8 +128,8 @@ if __name__ == "__main__":
     "RSP":  []
     }
     
-    keyboard_thread = threading.Thread(target=KeyboardMonitor)
-    keyboard_thread.daemon = True  # Set as daemon so it exits when main thread exits
+    keyboard_thread = threading.Thread(target=KeyMonitor)  # Create a thread for keyboard monitoring
+    keyboard_thread.daemon = True  # once the main function has quit, the thread will quit too
     keyboard_thread.start()
     
     # Dataframe from dictionary
@@ -156,7 +146,6 @@ if __name__ == "__main__":
     # Main loop
     while not should_exit:
         # One second counter
-        
         print(timer)
         timer += 1
         time.sleep(1)  
@@ -172,8 +161,8 @@ if __name__ == "__main__":
             ecg_df = LoadFile(path, ecg_filename)
             ecg_df = SegmentData(ecg_df, data_segment_start_time, data_segment_end_time)
             ecg_signal = GetECGSignal(ecg_df, ecg_sampling_rate)
-            ecg_peaks = GetPeaks(ecg_signal)
-            rmssd = GetRMSSD(ecg_peaks, ecg_sampling_rate)
+            ecg_peaks = GetECGPeaks(ecg_signal)
+            rmssd = GetECGRMSSD(ecg_peaks, ecg_sampling_rate)
 
             # Load and parse rsp data
             rsp_df = LoadFile(path, rsp_filename)
