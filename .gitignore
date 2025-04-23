@@ -72,4 +72,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 #big folders
-Python/venv
+Python/bioharness
+Python/Venv
