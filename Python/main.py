@@ -1,5 +1,6 @@
-# Load NeuroKit and other useful packages
+# With help from Sarra Graja
 
+# Load NeuroKit and other useful packages
 import os
 import neurokit2 as nk
 import pandas as pd
