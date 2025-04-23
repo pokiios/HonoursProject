@@ -1,12 +1,10 @@
 # Load NeuroKit and other useful packages
 
 import os
-from signal import getsignal
 import neurokit2 as nk
 import pandas as pd
 import numpy as np
 import time
-import warnings
 import keyboard
 import threading
 
@@ -16,8 +14,8 @@ should_exit = False
 def LoadFile(path, filename):
     try:
         raw_df = pd.read_csv(os.path.join(path, filename), header=None) # Read raw dataframe
-        if len(raw_df.columns) >= 2:
-            df = raw_df.iloc[:, 0:2]  # Take first two columns
+        if len(raw_df.columns) >= 2: # Check if the dataframe has at least 2 columns
+            df = raw_df.iloc[:, 0:2]  # Select first two columns
         else:
             df = raw_df
         return df
@@ -25,34 +23,41 @@ def LoadFile(path, filename):
         print(f'Error ECG file load: {e}')
         return None
 
+# Segments the data based on start and end time
 def SegmentData(df, start_time, end_time=None):
-    if len(df) > 2:
-        if start_time > 0:
-            df = df.loc[df[1] > start_time]
-        else:
-            # set start_session value to the mean value of the data portion 
-            df[0] = pd.to_numeric(df[0], errors="coerce")  # Convert strings to NaN if they are non-numeric
-            df.loc[0,0] = df[1::len(df)-1][0].mean()
+    try:
+        if len(df) > 2:
+            if start_time > 0:
+                df = df.loc[df[1] > start_time]
+            else:
+                # set start_session value to the mean value of the data portion 
+                df[0] = pd.to_numeric(df[0], errors="coerce")  # Convert strings to NaN if they are non-numeric
+                df.loc[0,0] = df[1::len(df)-1][0].mean()
+                
+            if (end_time != None) and (end_time < df.loc[df.index[-1], 1]):
+                # delete rows where dataTime > sessionEndTime (remove the data recorder after end of session (buffer leftovers before the end of the thread))
+                df = df.loc[df[1] < end_time]
+            else:
+                df = df.loc[df[1] < df.loc[df.index[-1], 1]]
             
-        if (end_time != None) and (end_time < df.loc[df.index[-1], 1]):
-            # delete rows where dataTime > sessionEndTime (remove the data recorder after end of session (buffer leftovers before the end of the thread))
-            df = df.loc[df[1] < end_time]
+            df = df.reset_index(drop=True) # Reset index after filtering
+            
+            # Converts data to float
+            df[0] = df[0].astype(float) 
+
+            return df
         else:
-            df = df.loc[df[1] < df.loc[df.index[-1], 1]]
+            print("DataFrame is too small to segment.")
+            return None
         
-        df = df.reset_index(drop=True)
-        
-        # Converts data to float
-        df[0] = df[0].astype(float)
-        
-        return df
-    else:
-        print("Empty Dataframe, returning none")
+    except Exception as e:
+        print(f"Error segmenting data, returning None: {e}")
         return None
 
 
 # Getting Signal from ECG
 def GetECGSignal(df, ecg_sampling_rate):
+    # Check if dataframe is empty
     if df is None:
         return None
     try:
@@ -160,6 +165,8 @@ if __name__ == "__main__":
             # Load and parse ecg data
             ecg_df = LoadFile(path, ecg_filename)
             ecg_df = SegmentData(ecg_df, data_segment_start_time, data_segment_end_time)
+
+            # Calculates the RMSSD from the ECG signal
             ecg_signal = GetECGSignal(ecg_df, ecg_sampling_rate)
             ecg_peaks = GetECGPeaks(ecg_signal)
             rmssd = GetECGRMSSD(ecg_peaks, ecg_sampling_rate)
@@ -168,25 +175,24 @@ if __name__ == "__main__":
             rsp_df = LoadFile(path, rsp_filename)
             rsp_df = SegmentData(rsp_df, data_segment_start_time, data_segment_end_time)
                 
-            if rsp_df is not None and len(rsp_df) >= 2:
-                rsp_signal = GetRSPSignal(rsp_df, rsp_sampling_rate)
-                rsp_rate = GetRate(rsp_signal)
-            else:
-                print("RSP DataFrame is either None or does not have enough data for processing.")
-                rsp_rate = GetRate(None)  # Set to None or a default value
+            # Calculates the RSP rate from the RSP signal
+            rsp_signal = GetRSPRate(rsp_df, rsp_sampling_rate)
+            rsp_rate = GetRSPSignal(rsp_signal)
             
+            # Creates a new row with the current timestamp and the calculated RMSSD and RSP values
             new_row = { 
                 'Timestamp': [timer],
                 'RMSSD': [rmssd if rmssd is not None else 0],  # Ensure 0 if None
                 'RSP': [rsp_rate if rsp_rate is not None else 0]  # Ensure 0 if None
             }
             
-            # Push results on new dataframe
-            collected_data = pd.concat([collected_data, pd.DataFrame(new_row)], ignore_index=True)
-            
-            #export dataframes
-            collected_data.to_csv(r"D:\_School\HonoursProject\Assets\CSV\CollectedData.csv",
-                      mode='w',  # Overwrite
-                      header=True,
+            # Turn Dictionary into DataFrame
+            new_row_df = pd.DataFrame(new_row)  # Create a DataFrame from the new row
+
+            # Append new row to the existing CSV
+            new_row_df.to_csv(r"D:\_School\HonoursProject\Assets\CSV\CollectedData.csv",
+                      mode='a',  # append
+                      header=False,  # Do not write header again
                       index=False)  # Remove default index column
+            
     print("Terminated program successfully.")
