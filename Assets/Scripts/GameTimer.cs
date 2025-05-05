@@ -21,7 +21,7 @@ public class GameTimer : MonoBehaviour
     //Wwise
     [SerializeField] AK.Wwise.RTPC volumeRTPC;
     [SerializeField] AK.Wwise.RTPC ambienceRTPC;
-    [SerializeField] AK.Wwise.RTPC ecgRTPC;
+    [SerializeField] AK.Wwise.RTPC playerEcgRTPC;
     public float currentValue, targetValue = 100;
     public float ambienceCurrent, ambienceTarget = 0;
     public float ecgCurrent, ecgTarget = 0;
@@ -29,9 +29,12 @@ public class GameTimer : MonoBehaviour
     [SerializeField] float easeSpeed = 0.3f;
 
     string csvFile = @"D:/_School/HonoursProject/Assets/CSV/CollectedData.csv";
+    string csvFilepath = @"D:/_School/HonoursProject/Assets/CSV/";
 
     public List<float> RMSSDList = new List<float>();
     public List<float> RSPList = new List<float>();
+    public List<float> soundPlayedTimeStampList = new List<float>(); // List to store the time stamps of sound played
+    public List<float> soundPlayedDistanceList = new List<float>(); // List to store the time distance of sound played to player
     public float averageRSP, averageRMSSD;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,7 +42,7 @@ public class GameTimer : MonoBehaviour
     {
         volumeRTPC.SetGlobalValue(currentValue);
         ambienceRTPC.SetGlobalValue(ambienceCurrent);
-        ecgRTPC.SetGlobalValue(ecgCurrent);
+        playerEcgRTPC.SetGlobalValue(ecgCurrent);
         timer = Random.Range(0, 15);
         timeStarted = true;
     }
@@ -68,7 +71,7 @@ public class GameTimer : MonoBehaviour
             // Set the global values for the RTPCs
             volumeRTPC.SetGlobalValue(currentValue);
             ambienceRTPC.SetGlobalValue(ambienceCurrent);
-            ecgRTPC.SetGlobalValue(ecgCurrent);
+            playerEcgRTPC.SetGlobalValue(ecgCurrent);
 
         }
 
@@ -77,6 +80,8 @@ public class GameTimer : MonoBehaviour
             // If time runs out, switch scene to main menu
             totalTime = 0;
             timeStarted = false;
+            // Save the data to CSV files
+            ListToCSV(csvFilepath, "soundPlayed.csv", soundPlayedDistanceList);
             SceneManager.LoadScene(SceneName);
         }
 
@@ -177,5 +182,38 @@ public class GameTimer : MonoBehaviour
 
         // Set string text to know when time is almost up for game
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void RecordTimeStamp()
+    {
+        float currentTime = totalTime;
+        float seconds = Mathf.Floor(currentTime % 60);
+        soundPlayedTimeStampList.Add(seconds); // Add the current time to the list
+    }
+
+    public void RecordDistance(float distance)
+    {
+        soundPlayedDistanceList.Add(distance); // Add the distance to the list
+    }
+
+    
+    private void ListToCSV(string filepath, string fileName, List<float> list)
+    {
+        // Check if the file exists
+        if (!File.Exists(filepath + fileName))
+        {
+            // Create the file if it doesn't exist
+            StreamWriter writer = new StreamWriter(filepath + fileName);
+            writer.WriteLine("TimeStamp,Distance");
+
+            // Write the out list alongside the timestamp when it happened
+            for (int i = 0; i < list.Count; i++) 
+            {
+                writer.WriteLine($"{soundPlayedTimeStampList[i]},{list[i]}"); // write the time stamp and distance
+            }
+
+
+            writer.Close();
+        }
     }
 }

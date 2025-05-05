@@ -31,6 +31,7 @@ public class RealTimeAttenuation : MonoBehaviour
     List<float> rmssdList, rspList;
     PhysStats stats;
     GameTimer gameManager;
+    PlayerMovement pm;
     
 
 
@@ -56,6 +57,7 @@ public class RealTimeAttenuation : MonoBehaviour
 
         // Find Game Manager
         targetValue = GameObject.Find("GameManager").GetComponent<GameTimer>().targetValue;
+        pm = UnityEngine.Object.FindFirstObjectByType<PlayerMovement>();
 
         // Create random location to spawn sound, uses ecg
         foreach (Transform child in soundManager.transform)
@@ -146,8 +148,15 @@ public class RealTimeAttenuation : MonoBehaviour
     // Play sound at random location
     void PlaySound(int randomPlayer)
     {
+        gameManager.RecordTimeStamp();
+
         randomRange1 = Random.Range(-attenuationRange, attenuationRange);
         randomRange2 = Random.Range(-attenuationRange, attenuationRange);
+
+        Vector3 tempVector = new Vector3(randomRange1, AttenuationPosition.transform.position.y, randomRange2);
+        float distance = Vector3.Distance(pm.transform.position, tempVector);
+
+        gameManager.soundPlayedDistanceList.Add(distance);
 
         soundPlayer[randomPlayer].transform.position = new Vector3(AttenuationPosition.transform.position.x + randomRange1, AttenuationPosition.transform.position.y, AttenuationPosition.transform.position.z + randomRange2);
 
