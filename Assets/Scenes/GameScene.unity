@@ -1494,7 +1494,7 @@ MonoBehaviour:
   ecgRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 1acc0e94f7db62f45879286ae81bec7e, type: 2}
   currentValue: 0
   targetValue: 100
   ambienceCurrent: 0
@@ -1506,6 +1506,8 @@ MonoBehaviour:
   easeSpeed: 0.3
   RMSSDList: []
   RSPList: []
+  soundPlayedTimeStampList: []
+  soundPlayedDistanceList: []
   averageRSP: 0
   averageRMSSD: 0
 --- !u!4 &512995015

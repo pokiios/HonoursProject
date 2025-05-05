@@ -21,7 +21,7 @@ public class GameTimer : MonoBehaviour
     //Wwise
     [SerializeField] AK.Wwise.RTPC volumeRTPC;
     [SerializeField] AK.Wwise.RTPC ambienceRTPC;
-    [SerializeField] AK.Wwise.RTPC playerEcgRTPC;
+    [SerializeField] AK.Wwise.RTPC ecgRTPC;
     public float currentValue, targetValue = 100;
     public float ambienceCurrent, ambienceTarget = 0;
     public float ecgCurrent, ecgTarget = 0;
@@ -42,7 +42,7 @@ public class GameTimer : MonoBehaviour
     {
         volumeRTPC.SetGlobalValue(currentValue);
         ambienceRTPC.SetGlobalValue(ambienceCurrent);
-        playerEcgRTPC.SetGlobalValue(ecgCurrent);
+        ecgRTPC.SetGlobalValue(ecgCurrent);
         timer = Random.Range(0, 15);
         timeStarted = true;
     }
@@ -71,7 +71,7 @@ public class GameTimer : MonoBehaviour
             // Set the global values for the RTPCs
             volumeRTPC.SetGlobalValue(currentValue);
             ambienceRTPC.SetGlobalValue(ambienceCurrent);
-            playerEcgRTPC.SetGlobalValue(ecgCurrent);
+            ecgRTPC.SetGlobalValue(ecgCurrent);
 
         }
 

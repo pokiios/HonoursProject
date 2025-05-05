@@ -111,8 +111,8 @@ MonoBehaviour:
         guid: 10c8c9ff9789d1418c3f6b534b02c8f8
       Path: Events\Default Work Unit\CrowAmbience
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Heartbeat
       guid: 23e15c1ab969834d9424a1a261075526
       id: 2179486487
@@ -128,8 +128,8 @@ MonoBehaviour:
         guid: 23e15c1ab969834d9424a1a261075526
       Path: Events\Default Work Unit\Heartbeat
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 15.901479
+      minDuration: 15.901479
     - name: HorrorAmbience
       guid: 11ba05fb14c28841a52f8c44f4744961
       id: 1938073225
@@ -144,9 +144,9 @@ MonoBehaviour:
         ObjectType: 3
         guid: 11ba05fb14c28841a52f8c44f4744961
       Path: Events\Default Work Unit\HorrorAmbience
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxAttenuation: 20
+      maxDuration: 0
+      minDuration: 0
     - name: Rainfall
       guid: a13e3b6f90bffb4183bd2d68105dd564
       id: 511469240
@@ -162,8 +162,8 @@ MonoBehaviour:
         guid: a13e3b6f90bffb4183bd2d68105dd564
       Path: Events\Default Work Unit\Rainfall
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: RandomFootstep
       guid: ae744f7c28aadc47b6f2e1c44f52cbc8
       id: 1721495266
@@ -179,8 +179,8 @@ MonoBehaviour:
         guid: ae744f7c28aadc47b6f2e1c44f52cbc8
       Path: Events\Default Work Unit\RandomFootstep
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.5195806
+      minDuration: 0.40986603
     - name: RandomisedSoundEvent
       guid: 21866c6c6c08154e87d569efb5c7a6af
       id: 2255296536
@@ -195,9 +195,9 @@ MonoBehaviour:
         ObjectType: 3
         guid: 21866c6c6c08154e87d569efb5c7a6af
       Path: Events\Default Work Unit\RandomisedSoundEvent
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxAttenuation: 50
+      maxDuration: 14.589667
+      minDuration: 0.72025245
     - name: RealTimeSoundEvent
       guid: d52e6bff725ec947bb60681bd32471c0
       id: 2592411681
@@ -212,9 +212,9 @@ MonoBehaviour:
         ObjectType: 3
         guid: d52e6bff725ec947bb60681bd32471c0
       Path: Events\Default Work Unit\RealTimeSoundEvent
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxAttenuation: 50
+      maxDuration: 14.589667
+      minDuration: 0.72025245
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
