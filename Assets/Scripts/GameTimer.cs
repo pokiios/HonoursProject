@@ -29,6 +29,7 @@ public class GameTimer : MonoBehaviour
     [SerializeField] float easeSpeed = 0.3f;
 
     string csvFile = @"D:/_School/HonoursProject/Assets/CSV/CollectedData.csv";
+    string csvFilePath = @"D:/_School/HonoursProject/Assets/CSV/";
 
     public List<float> RMSSDList = new List<float>();
     public List<float> RSPList = new List<float>();
@@ -80,6 +81,12 @@ public class GameTimer : MonoBehaviour
             // If time runs out, switch scene to main menu
             totalTime = 0;
             timeStarted = false;
+
+            // Save the data to CSV files
+            ListToCSV(csvFilePath, "SoundPlayedTimeStamp.csv", soundPlayedTimeStampList); // save sound played time stamps
+            ListToCSV(csvFilePath, "SoundDistanceFromPlayer.csv", soundDistanceFromPlayerList); // save sound distance from player
+            ListToCSV(csvFilePath, "SoundPlayedList.csv", soundPlayedList); // save sound played list
+
             SceneManager.LoadScene(SceneName);
         }
 
@@ -197,5 +204,33 @@ public class GameTimer : MonoBehaviour
         // Record the distance from the player
         soundDistanceFromPlayerList.Add(distance);
         Debug.Log("Sound distance from player: " + distance);
+    }
+
+    private void ListToCSV(string filepath, string fileName, List<float> list)
+    {
+        // Create CSV if it doesnt exist
+        if (!File.Exists(filepath + fileName))
+        {
+            StreamWriter writer = new StreamWriter(filepath + fileName);
+            writer.WriteLine("fileName");
+            for (int i = 0; i < list.Count; i++)
+            {
+                writer.WriteLine(list[i]);
+            }
+        }
+
+    }
+
+    private void ListToCSV(string filepath, string fileName, List<string> list)
+    {
+        if (!File.Exists(filepath + fileName))
+        {
+            StreamWriter writer = new StreamWriter(filepath + fileName);
+            writer.WriteLine("fileName");
+            for (int i = 0; i < list.Count; i++)
+            {
+                writer.WriteLine(list[i]);
+            }
+        }
     }
 }
