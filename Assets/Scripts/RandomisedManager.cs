@@ -87,14 +87,12 @@ public class RandomisedManager : MonoBehaviour
             randomRange2 = UnityEngine.Random.Range(-attenuationRange, attenuationRange);
 
 
-            Vector3 tempVector = new Vector3(randomRange1, attenuationPosition.transform.position.y, randomRange2);
+            Vector3 tempVector = new Vector3(attenuationPosition.transform.position.x + randomRange1, attenuationPosition.transform.position.y, attenuationPosition.transform.position.z + randomRange2);
             float distance = Vector3.Distance(pm.transform.position, tempVector);
 
             gameManager.soundPlayedDistanceList.Add(distance);
 
             soundPlayer[randomPlayer].transform.position = new Vector3(attenuationPosition.transform.position.x + randomRange1, attenuationPosition.transform.position.y, attenuationPosition.transform.position.z + randomRange2);
-
-            gameManager.sound
 
             randomisedSounds.Post(soundPlayer[randomPlayer]);
             Debug.Log("Playing Sound at " + soundPlayer[randomPlayer].transform.position);

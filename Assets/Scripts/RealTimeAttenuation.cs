@@ -32,16 +32,12 @@ public class RealTimeAttenuation : MonoBehaviour
     PhysStats stats;
     GameTimer gameManager;
     PlayerMovement pm;
-    
-
 
     float randomRange1, randomRange2;
 
     List<GameObject> soundPlayer = new List<GameObject>();
     public Transform soundManager;
 
-    // File Path
-    string csvFile = @"D:/_School/HonoursProject/Assets/CSV/CollectedData.csv";
 
     // Other
     float timer;
@@ -153,7 +149,7 @@ public class RealTimeAttenuation : MonoBehaviour
         randomRange1 = Random.Range(-attenuationRange, attenuationRange);
         randomRange2 = Random.Range(-attenuationRange, attenuationRange);
 
-        Vector3 tempVector = new Vector3(randomRange1, AttenuationPosition.transform.position.y, randomRange2);
+        Vector3 tempVector = new Vector3(AttenuationPosition.transform.position.x + randomRange1, AttenuationPosition.transform.position.y, AttenuationPosition.transform.position.z + randomRange2);
         float distance = Vector3.Distance(pm.transform.position, tempVector);
 
         gameManager.soundPlayedDistanceList.Add(distance);
