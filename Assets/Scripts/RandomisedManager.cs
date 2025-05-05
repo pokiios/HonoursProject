@@ -22,11 +22,17 @@ public class RandomisedManager : MonoBehaviour
     bool can_play;
     List<GameObject> soundPlayer = new List<GameObject>();
     public Transform soundManager;
+    GameTimer gameManager;
+
+    float soundDistance;
+
+    PlayerMovement pm;
 
     void Start()
     {
         // Find Game Manager
         targetValue = GameObject.Find("GameManager").GetComponent<GameTimer>().targetValue;
+        pm = GameObject.Find("Player").GetComponent<PlayerMovement>();
 
         foreach (Transform child in soundManager.transform)
         {
@@ -77,11 +83,24 @@ public class RandomisedManager : MonoBehaviour
     {
         if (can_play == true)
         {
+            string soundName = soundPlayer[randomPlayer].name;
+            gameManager.RecordTimestamp(soundName); // Record the time when the sound is 
+
+            // record what sound was played
+
             randomRange1 = UnityEngine.Random.Range(-attenuationRange, attenuationRange);
             randomRange2 = UnityEngine.Random.Range(-attenuationRange, attenuationRange);
+
+            Vector3 tempVector = new Vector3(randomRange1, attenuationPosition.transform.position.y, randomRange2);
+            float tempMagnitude = (tempVector - pm.transform.position).magnitude; // Distance from player to sound
+
+            gameManager.RecordDistance(tempMagnitude);
+
             soundPlayer[randomPlayer].transform.position = new Vector3(attenuationPosition.transform.position.x + randomRange1, attenuationPosition.transform.position.y, attenuationPosition.transform.position.z + randomRange2);
             randomisedSounds.Post(soundPlayer[randomPlayer]);
             Debug.Log("Playing Sound at " + soundPlayer[randomPlayer].transform.position);
+
+
         }
     }
 }

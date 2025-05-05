@@ -1,11 +1,11 @@
-# Reference https://www.youtube.com/watch?v=f473C43s8nE
-
 using System;
 using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
+// Reference https://www.youtube.com/watch?v=f473C43s8nE
+
     [SerializeField] float sensX;
     [SerializeField] float sensY;
 

@@ -21,7 +21,7 @@ public class GameTimer : MonoBehaviour
     //Wwise
     [SerializeField] AK.Wwise.RTPC volumeRTPC;
     [SerializeField] AK.Wwise.RTPC ambienceRTPC;
-    [SerializeField] AK.Wwise.RTPC ecgRTPC;
+    [SerializeField] AK.Wwise.RTPC playerECGRTPC;
     public float currentValue, targetValue = 100;
     public float ambienceCurrent, ambienceTarget = 0;
     public float ecgCurrent, ecgTarget = 0;
@@ -32,6 +32,9 @@ public class GameTimer : MonoBehaviour
 
     public List<float> RMSSDList = new List<float>();
     public List<float> RSPList = new List<float>();
+    public List<float> soundPlayedTimeStampList = new List<float>();
+    public List<float> soundDistanceFromPlayerList = new List<float>();
+    public List<string> soundPlayedList = new List<string>();
     public float averageRSP, averageRMSSD;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,7 +42,7 @@ public class GameTimer : MonoBehaviour
     {
         volumeRTPC.SetGlobalValue(currentValue);
         ambienceRTPC.SetGlobalValue(ambienceCurrent);
-        ecgRTPC.SetGlobalValue(ecgCurrent);
+        playerECGRTPC.SetGlobalValue(ecgCurrent);
         timer = Random.Range(0, 15);
         timeStarted = true;
     }
@@ -68,7 +71,7 @@ public class GameTimer : MonoBehaviour
             // Set the global values for the RTPCs
             volumeRTPC.SetGlobalValue(currentValue);
             ambienceRTPC.SetGlobalValue(ambienceCurrent);
-            ecgRTPC.SetGlobalValue(ecgCurrent);
+            playerECGRTPC.SetGlobalValue(ecgCurrent);
 
         }
 
@@ -177,5 +180,22 @@ public class GameTimer : MonoBehaviour
 
         // Set string text to know when time is almost up for game
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void RecordTimestamp(string name)
+    {
+        // Record the current time in seconds
+        float currentTime = totalTime;
+        float seconds = totalTime % 60;
+        soundPlayedTimeStampList.Add(seconds);
+        soundPlayedList.Add(name);
+        Debug.Log("Sound played at: " + currentTime + " seconds");
+    }
+
+    public void RecordDistance(float distance)
+    {
+        // Record the distance from the player
+        soundDistanceFromPlayerList.Add(distance);
+        Debug.Log("Sound distance from player: " + distance);
     }
 }

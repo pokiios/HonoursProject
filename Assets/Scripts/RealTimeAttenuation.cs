@@ -31,6 +31,7 @@ public class RealTimeAttenuation : MonoBehaviour
     List<float> rmssdList, rspList;
     PhysStats stats;
     GameTimer gameManager;
+    PlayerMovement pm;
     
 
 
@@ -38,9 +39,6 @@ public class RealTimeAttenuation : MonoBehaviour
 
     List<GameObject> soundPlayer = new List<GameObject>();
     public Transform soundManager;
-
-    // File Path
-    string csvFile = @"D:/_School/HonoursProject/Assets/CSV/CollectedData.csv";
 
     // Other
     float timer;
@@ -56,6 +54,7 @@ public class RealTimeAttenuation : MonoBehaviour
 
         // Find Game Manager
         targetValue = GameObject.Find("GameManager").GetComponent<GameTimer>().targetValue;
+        pm = GameObject.Find("Player").GetComponent<PlayerMovement>();
 
         // Create random location to spawn sound, uses ecg
         foreach (Transform child in soundManager.transform)
@@ -146,8 +145,17 @@ public class RealTimeAttenuation : MonoBehaviour
     // Play sound at random location
     void PlaySound(int randomPlayer)
     {
+        // Find name of sound played 
+        string soundName = soundPlayer[randomPlayer].name;
+        gameManager.RecordTimestamp(soundName); // Record the time when the sound is played
+
         randomRange1 = Random.Range(-attenuationRange, attenuationRange);
         randomRange2 = Random.Range(-attenuationRange, attenuationRange);
+
+        Vector3 tempVector = new Vector3(randomRange1, AttenuationPosition.transform.position.y, randomRange2);
+        float tempMagnitude = (tempVector - pm.transform.position).magnitude; // Distance from player to sound
+
+        gameManager.RecordDistance(tempMagnitude);
 
         soundPlayer[randomPlayer].transform.position = new Vector3(AttenuationPosition.transform.position.x + randomRange1, AttenuationPosition.transform.position.y, AttenuationPosition.transform.position.z + randomRange2);
 

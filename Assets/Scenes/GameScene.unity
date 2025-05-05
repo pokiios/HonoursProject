@@ -369,6 +369,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 5f30bc6bd0d954846ad38d7c658b2889, type: 2}
+  gameManager: {fileID: 512995014}
   soundManager: {fileID: 1869794982}
 --- !u!114 &192336474
 MonoBehaviour:
@@ -1459,7 +1460,6 @@ GameObject:
   - component: {fileID: 512995014}
   - component: {fileID: 512995017}
   - component: {fileID: 512995016}
-  - component: {fileID: 512995018}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1491,10 +1491,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 1232d650cbe1a5042a9e35c7dc00b16c, type: 2}
-  ecgRTPC:
+  playerECGRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 1acc0e94f7db62f45879286ae81bec7e, type: 2}
   currentValue: 0
   targetValue: 100
   ambienceCurrent: 0
@@ -1506,6 +1506,8 @@ MonoBehaviour:
   easeSpeed: 0.3
   RMSSDList: []
   RSPList: []
+  soundPlayedTimeStampList: []
+  soundDistanceFromPlayerList: []
   averageRSP: 0
   averageRMSSD: 0
 --- !u!4 &512995015
@@ -1577,25 +1579,6 @@ MonoBehaviour:
   scalingFactor: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &512995018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512995013}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ef1385b91ec7fb45890503dea7a292c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
-  avgPhysText: {fileID: 0}
-  totalTime: 300
-  SceneName: 
-  timeStarted: 0
-  averageRMSSD: 0
-  averageRSP: 0
 --- !u!4 &518933385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1477588318084070245, guid: fd98e04d6121042409274be6d2fb1b3b, type: 3}
