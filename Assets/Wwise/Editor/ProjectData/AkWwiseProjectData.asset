@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7093cb42cf0ce84ba2d92686dd68af21
     GuidInternal: 
-    m_lastTime: -8584605918700886268
+    m_lastTime: -8584587877100706185
     List:
     - name: Main
       guid: 6f8a54421cecd44ab5e84eac68e71991
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: d9829b2e836c2e468268eb7045074268
     GuidInternal: 
-    m_lastTime: -8584605918708249989
+    m_lastTime: -8584587877107311472
     List:
     - name: CrowAmbience
       guid: 10c8c9ff9789d1418c3f6b534b02c8f8
@@ -111,8 +111,8 @@ MonoBehaviour:
         guid: 10c8c9ff9789d1418c3f6b534b02c8f8
       Path: Events\Default Work Unit\CrowAmbience
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Heartbeat
       guid: 23e15c1ab969834d9424a1a261075526
       id: 2179486487
@@ -128,8 +128,8 @@ MonoBehaviour:
         guid: 23e15c1ab969834d9424a1a261075526
       Path: Events\Default Work Unit\Heartbeat
       maxAttenuation: 0
-      maxDuration: 15.901479
-      minDuration: 15.901479
+      maxDuration: -1
+      minDuration: -1
     - name: HorrorAmbience
       guid: 11ba05fb14c28841a52f8c44f4744961
       id: 1938073225
@@ -144,9 +144,9 @@ MonoBehaviour:
         ObjectType: 3
         guid: 11ba05fb14c28841a52f8c44f4744961
       Path: Events\Default Work Unit\HorrorAmbience
-      maxAttenuation: 20
-      maxDuration: 0
-      minDuration: 0
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Rainfall
       guid: a13e3b6f90bffb4183bd2d68105dd564
       id: 511469240
@@ -162,8 +162,8 @@ MonoBehaviour:
         guid: a13e3b6f90bffb4183bd2d68105dd564
       Path: Events\Default Work Unit\Rainfall
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: RandomFootstep
       guid: ae744f7c28aadc47b6f2e1c44f52cbc8
       id: 1721495266
@@ -179,8 +179,8 @@ MonoBehaviour:
         guid: ae744f7c28aadc47b6f2e1c44f52cbc8
       Path: Events\Default Work Unit\RandomFootstep
       maxAttenuation: 0
-      maxDuration: 0.5195806
-      minDuration: 0.40986603
+      maxDuration: -1
+      minDuration: -1
     - name: RandomisedSoundEvent
       guid: 21866c6c6c08154e87d569efb5c7a6af
       id: 2255296536
@@ -195,9 +195,9 @@ MonoBehaviour:
         ObjectType: 3
         guid: 21866c6c6c08154e87d569efb5c7a6af
       Path: Events\Default Work Unit\RandomisedSoundEvent
-      maxAttenuation: 50
-      maxDuration: 14.589667
-      minDuration: 0.72025245
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: RealTimeSoundEvent
       guid: d52e6bff725ec947bb60681bd32471c0
       id: 2592411681
@@ -212,9 +212,9 @@ MonoBehaviour:
         ObjectType: 3
         guid: d52e6bff725ec947bb60681bd32471c0
       Path: Events\Default Work Unit\RealTimeSoundEvent
-      maxAttenuation: 50
-      maxDuration: 14.589667
-      minDuration: 0.72025245
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -227,7 +227,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: d62140c824e0f54c8cf65f6ff4b1fe66
     GuidInternal: 
-    m_lastTime: -8584605918708174716
+    m_lastTime: -8584587877107241455
     List:
     - name: RTPC_AmbienceVolume
       guid: 30a86c2a37943d44bc30370875da05f5
